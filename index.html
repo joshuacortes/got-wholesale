@@ -302,7 +302,102 @@
 
 
 
+<section class="cover-section">
+  <div class="cover-slide" style="background-image: url('https://i.postimg.cc/q4DCRGTP/gw-racing-gloss-ppf-homepage-1.jpg');">
+    <div class="cover-content">
+      <h2>Premium Gloss PPF</h2>
+      <p>Engineered for performance and clarity.</p>
+      <a href="/ppf-rolls" class="cover-button">Shop Now</a>
+    </div>
+  </div>
 
+  <div class="cover-slide" style="background-image: url('https://i.postimg.cc/rqdRttyK/gw-racing-gloss-ppf-homepage-2.jpg');">
+    <div class="cover-content">
+      <h2>Ceramic Window Tint</h2>
+      <p>Maximum heat rejection & style.</p>
+      <a href="/window-tint" class="cover-button">Explore Tint</a>
+    </div>
+  </div>
+
+</section>
+
+
+
+<style>
+  .cover-section {
+  width: 100%;
+  overflow: hidden;
+}
+
+.cover-slide {
+  position: relative;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cover-slide:not(:last-child) {
+  margin-bottom: 2px; /* Space between covers */
+}
+
+.cover-slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.cover-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+.cover-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.cover-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.cover-button {
+  display: inline-block;
+  background-color: #ff4d00;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.cover-button:hover {
+  background-color: #e04300;
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .cover-content h2 {
+    font-size: 3.5rem;
+  }
+
+  .cover-content p {
+    font-size: 1.5rem;
+  }
+}
+
+</style>
 
 
 
