@@ -313,8 +313,8 @@
 
   <div class="cover-slide" style="background-image: url('https://i.postimg.cc/rqdRttyK/gw-racing-gloss-ppf-homepage-2.jpg');">
     <div class="cover-content">
-      <h2>Ceramic Window Tint</h2>
-      <p>Maximum heat rejection & style.</p>
+      <h2>Dealers & Auto Groups</h2>
+      <p>Resources, Cutting Software, Training, Dealer Portal</p>
       <a href="/window-tint" class="cover-button">Explore Tint</a>
     </div>
   </div>
@@ -401,7 +401,9 @@
 
 
 
-<div class="video-wrapper">
+
+<!-- Video Cover Section -->
+<div class="video-hero-cover">
   <video
     src="https://videos.pexels.com/video-files/5991156/5991156-hd_1280_720_30fps.mp4"
     autoplay
@@ -410,19 +412,23 @@
     playsinline
     preload="auto"
   ></video>
+  <div class="video-hero-overlay"></div>
+  <div class="video-hero-content">
+    <h2>Unmatched Clarity</h2>
+    <p>Explore our high-performance paint protection films.</p>
+    <a href="/ppf-rolls" class="video-hero-button">Shop PPF Now</a>
+  </div>
 </div>
 
-<!-- CSS --> 
 <style>
-  .video-wrapper {
+  .video-hero-cover {
     position: relative;
     width: 100%;
-    max-width: 100%;
+    height: 100vh;
     overflow: hidden;
-    padding-top: 56.25%; /* 16:9 aspect ratio */
   }
 
-  .video-wrapper video {
+  .video-hero-cover video {
     position: absolute;
     top: 0;
     left: 0;
@@ -433,21 +439,62 @@
     pointer-events: none;
   }
 
-  @media (min-width: 768px) {
-    .video-wrapper {
-      padding-top: 50%; /* You can adjust this ratio for desktop */ 
-      
-      
-    }
-    
-      .video-wrapper video {
-  
-    height: 50%;
+  .video-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1;
   }
-    
-    
+
+  .video-hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .video-hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+
+  .video-hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .video-hero-button {
+    display: inline-block;
+    background-color: #ff4d00;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+  }
+
+  .video-hero-button:hover {
+    background-color: #e04300;
+  }
+
+  /* Responsive for larger screens */
+  @media (min-width: 768px) {
+    .video-hero-content h2 {
+      font-size: 3.5rem;
+    }
+
+    .video-hero-content p {
+      font-size: 1.5rem;
+    }
   }
 </style>
+
 
 
 
