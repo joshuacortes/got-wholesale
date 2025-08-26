@@ -455,7 +455,129 @@ Designed for those who want advanced protection without sacrificing visibility, 
 Phantom IR combines superior thermal comfort with outstanding optical clarity—without heavily darkening your vehicle's windows. It’s the ideal choice for drivers who want sleek aesthetics, enhanced performance, and all-day comfort inside the cabin.
     
   </p>
+  
 </section>
+
+
+  <br><br>
+  
+  <section class="image-gallery">
+  <h2 class="gallery-title">Rayno Window Film Gallery</h2>
+  <div class="gallery-grid">
+    <img src="https://i.postimg.cc/Gbys3yFP/luxury-auto-window-film-supply-2.jpg" alt="Rayno Film 1" class="gallery-img">
+    <img src="https://i.postimg.cc/191V83Bk/luxury-auto-window-film-supply-3.jpg" alt="Rayno Film 2" class="gallery-img">
+    <img src="https://i.postimg.cc/3Kj4mQbd/luxury-auto-window-film-supply-4.jpg" alt="Rayno Film 3" class="gallery-img">
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox-modal" class="lightbox-modal">
+    <span class="close-lightbox">&times;</span>
+    <img class="lightbox-content" id="lightbox-img" src="">
+  </div>
+</section>
+  
+  
+
+
+<style>
+  .image-gallery {
+  padding: 2rem 1.5rem;
+  background: #f9f9f9;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  color: #111;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-img:hover {
+  transform: scale(1.03);
+}
+
+/* Lightbox Modal */
+.lightbox-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.lightbox-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80vh;
+}
+
+.close-lightbox {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.close-lightbox:hover {
+  color: #ccc;
+}
+</style>
+
+<script>
+  <script>
+  const modal = document.getElementById("lightbox-modal");
+  const modalImg = document.getElementById("lightbox-img");
+  const images = document.querySelectorAll(".gallery-img");
+  const closeBtn = document.querySelector(".close-lightbox");
+
+  images.forEach(img => {
+    img.addEventListener("click", () => {
+      modal.style.display = "block";
+      modalImg.src = img.src;
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+</script>
+
+</script>
+
 
 <br>
 <!-- CTA Block -->
