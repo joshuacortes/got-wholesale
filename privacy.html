@@ -1,610 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>GW Racing, Privacy</title>
-  <meta name="description" content="GW Racing Products, Privacy">
-
-  <!-- Favicon -->
+  <title>Privacy Policy | GW Digital Marketing Academy</title>
+  <meta name="description" content="Privacy Policy for GW Digital Marketing Academy. Learn how we collect, use, and protect your information.">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  
   <meta charset="UTF-8">
-
-  <!-- Viewport for responsive design -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17084906274"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'AW-17084906274');
-</script>
-  
-</head>
+  <!-- Google Tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17084906274"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17084906274');
+  </script>
 
-
-
-<style>
-    /* Reset + Base */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box;}
     body {
-      margin:0;
-      padding:0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       background: #f9f9f9;
       color: #111;
-        overflow-x: hidden;
-  max-width: 100vw;
+      overflow-x: hidden;
+      max-width: 100vw;
     }
+    a {color: inherit; text-decoration: none;}
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-  .logo{
-     font-size: 1.3rem;
+    .logo {
+      font-size: 1.5rem;
       font-weight: bold;
       color: #111;
-      font-style:italic;
-      font-family:verdana;
-      letter-spacing:-1px;
-    
-  }
-    /* Navigation Container */
+      font-style: italic;
+      font-family: verdana;
+      letter-spacing: -2px;
+    }
+
+    /* NAVIGATION */
     .nav {
-      background-color: #ffffff;
+      background: #fff;
       padding: 1rem 1.5rem;
       position: sticky;
       top: 0;
       z-index: 999;
-      
-      box-shadow: 0 3px 0 0 yellow, 0 5px 0 0 blue;
+      box-shadow: 0 3px 0 0 #0071e3, 0 5px 0 0 #111;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
-    .nav .brand {
-      font-size: 1.3rem;
-      font-weight: bold;
-      color: #111;
-      font-style:italic;
-      font-family:verdana;
-      letter-spacing:-1px;
-    }
-
-    /* Hamburger Toggle */
-    .nav .toggle {
-      display: block;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      color: #111;
-      position: absolute;
-      top: 1rem;
-      right: 1.5rem;
-      cursor: pointer;
-    }
-
-    /* Menu Links */
+    .toggle {display:none;}
     .nav ul {
       list-style: none;
-      display: none;
-      flex-direction: column;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    .nav ul li a {
-      padding: 0.5rem 0;
-      display: block;
-      border-bottom: 1px solid #eaeaea;
-      transition: color 0.3s ease;
-      font-size:1.3em;
-    font-weight:600;
-    }
-
-    .nav ul li a:hover {
-      color: #0071e3; /* Apple-style blue */
-    }
-
-    /* Show menu on toggle */
-    #nav-toggle:checked ~ ul {
       display: flex;
+      gap: 2rem;
     }
-  
-  
-  
-  /* Sticky Ticker Bar */
-.ticker {
-  background-color: #f2f2f2;
-  color: #111;
-  font-size: 1.05rem;
-  padding: 0.6rem 1.5rem;
-  text-align: center;
-  position: sticky;
-  top: 0;
-  z-index: 100; /* Higher than nav */
-  border-bottom: 1px solid #e0e0e0;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-}
-
-.ticker a {
-  color: #0071e3;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.ticker a:hover {
-  text-decoration: underline;
-}
-  
-  /* Footer */
-.footer {
-  background-color: #ededed;
-  padding: 2rem 1.5rem;
-  color: #111;
-  border-top: 1px solid #eaeaea;
-  font-size: 0.95rem;
-  
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-.footer-container {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  align-items: flex-start;
-  padding: 0 2rem; /* ✅ adds horizontal padding */
-  
-}
-  
-  
-  .footer-company ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-company ul li {
-  margin-bottom: 0.5rem;
-}
-
-  
-
-.footer h2 {
-  font-size: 1.4rem;
-  margin-bottom: 0.5rem;
-}
-
-.footer h4 {
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-}
-
-.footer p,
-.footer a {
-  color: #444;
-  text-decoration: none;
-}
-
-.footer a:hover {
-  color: #0071e3;
-}
-
-.footer-links ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-links ul li {
-  margin-bottom: 0.5rem;
-}
-
-/* Call to Action Button */
-.footer-cta {
-  width: 100%;
-  margin-top: 1rem;
-}
-
-.btn-build {
-  display: inline-block;
-  background-color: #000e30;
-  color: #fff !important;
-  font-weight: 700;
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 14, 48, 0.4);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  user-select: none;
-}
-
-.btn-build:hover,
-.btn-build:focus {
-  background-color: #000e30;
-  box-shadow: 0 6px 12px rgba(0, 14, 48, 0.5);
-  outline: none;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* Responsive layout */
-@media (min-width: 768px) {
-  
-  
-     .nav .brand {
-      font-size: 1.9rem;
-        letter-spacing:-2px;
-       
-  
+    .nav ul li a {
+      font-size:1.1rem;
+      font-weight:600;
+      transition:color .3s ease;
     }
-       
-     .logo {
-      font-size: 1.9rem;
-        letter-spacing:-2px;
-  }
-  
-  
-  .footer-container {
-   flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    .nav ul li a:hover {color:#0071e3;}
 
-    max-width: 800px;   /* limit the width */
-    margin: 0 auto;      /* horizontally center it */
-    padding: 0 2rem;     /* add left/right breathing room */
-    width: 100%;         /* ensure it spans available space */
-  }
+    .footer ul {
+      list-style: none;
+      padding-left: 0;
+      margin-left: 0;
+    }
 
-  .footer-brand,
-  .footer-links,
-  .footer-company,
-  .footer-info {
-    flex: 1;
-    min-width: 200px;
-  }
+    .footer-links{width:30%;}
+    .footer-company{width:30%;}
 
-  .footer-cta {
-    flex: 0 0 auto;
-    margin-top: 0;
-    margin-left: 2rem;
-  }
-}
-
-  
-
-    /* Desktop Styles */
-    @media (min-width: 768px) {
-      .nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+    @media (max-width: 768px) {
+      .footer-links{width:80%;}
+      .footer-company{width:80%;}
+      .toggle {
+        display: block;
+        background:none;
+        border:none;
+        font-size:1.5rem;
+        position:absolute;
+        right:1.5rem;
+        top:1rem;
+        cursor:pointer;
       }
-
-      .nav .toggle {
-        display: none;
-      }
-
       .nav ul {
-        display: flex !important;
-        flex-direction: row;
-        gap: 2rem;
-        margin-top: 0;
+        display:none;
+        flex-direction:column;
+        background:#fff;
+        width:100%;
+        position:absolute;
+        left:0;
+        top:100%;
+        padding:1rem;
+        border-top:1px solid #eee;
       }
-
-      .nav ul li a {
-        border: none;
-        padding: 0.5rem 0;
-      }
+      #nav-toggle:checked ~ ul {display:flex;}
     }
-  </style>
-<div class="ticker">
-  <a href="/dealers">✨ Get 30% Off Premium PPF →</a>
-</div>
- <nav class="nav">
-     <div class="brand"><a href="/" style="text-decoration:none;">GW RACING</a></div>
 
-    <!-- Mobile Toggle -->
-    <input type="checkbox" id="nav-toggle" hidden>
-    <label for="nav-toggle" class="toggle">&#9776;</label>
+    /* Ticker Bar */
+    .ticker {
+      background:#f4f4f4;
+      color:#111;
+      font-size:1.05rem;
+      padding:0.6rem 1.5rem;
+      text-align:center;
+      position:sticky;
+      top:0;
+      z-index:100;
+      border-bottom:1px solid #ddd;
+    }
+    .ticker a {color:#0071e3; font-weight:500;}
+    .ticker a:hover {text-decoration:underline;}
 
-    <!-- Navigation Links -->
-    <ul>
-      <li><a href="/ppf-rolls">PPF Products</a></li>
-      <li><a href="/ppf-bulk-rolls">PPF Bulk Rolls</a></li>
-      <li><a href="/ppf-wrap-wholesale">PPF Wrap Wholesale</a></li>
-      <li><a href="/contact">Contact</a></li>
-    </ul>
-  </nav>
-
-
-
-
-
-
-
-
-<style>
-    /* Reuse of base styles from existing layout assumed */
-
-    .section {
-      padding: 4rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
+    /* PRIVACY SECTION */
+    .privacy-section {
+      max-width: 1000px;
+      margin: 4rem auto;
+      padding: 2rem;
+      text-align: left;
+    }
+    .privacy-section h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
       text-align: center;
     }
-
-    .section img {
-      width: 100%;
-      max-width: 1000px;
-      border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-      margin-bottom: 2rem;
-    }
-
-    .section h2 {
+    .privacy-section h2 {
       font-size: 1.5rem;
-      font-weight: 700;
+      margin-top: 2rem;
       margin-bottom: 1rem;
-      color: #111; 
-    }
-
-    .section p {
-      font-size: 1.2rem;
-      color: #444;
-      margin-bottom: 2rem;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .btn-ppf {
-      display: inline-block;
-      background-color: #ff4d00;
-      color: white;
-      padding: 0.75rem 1.5rem;
-      font-size: 1.1rem;
       font-weight: 600;
-      border-radius: 6px;
-      transition: background-color 0.3s ease;
+      color: #111;
+    }
+    .privacy-section p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+    .privacy-section a {
+      color: #0071e3;
       text-decoration: none;
+      font-weight: 500;
+    }
+    .privacy-section a:hover {
+      text-decoration: underline;
     }
 
-    .btn-ppf:hover {
-      background-color: #e04300;
+    /* FOOTER */
+    .footer {
+      background:#ededed;
+      padding:2rem 1.5rem;
+      color:#111;
+      border-top:1px solid #eaeaea;
+      font-size:0.95rem;
     }
-
-    @media (min-width: 768px) {
-      .section h2 {
-        font-size: 1.5rem;
+    .footer-container {
+      display:flex;
+      flex-direction:column;
+      gap:2rem;
+      max-width:1000px;
+      margin:0 auto;
+      align-items:flex-start;
+    }
+    @media(min-width:768px){
+      .footer-container {
+        flex-direction:row;
+        justify-content:space-between;
+        align-items:center;
       }
-
-      .section p {
-        font-size: 1.4rem;
-      }
     }
+    .footer a:hover{color:#0071e3;}
+    .btn-build {
+      display:inline-block;
+      background-color:#0071e3;
+      color:#fff;
+      font-weight:700;
+      padding:0.75rem 1.5rem;
+      border-radius:6px;
+      text-align:center;
+      transition:background-color .3s ease, box-shadow .3s ease;
+    }
+    .btn-build:hover {background:#005bb5;}
   </style>
+</head>
 
+<body>
 
-
-
-<section class="section">
-  <h1>Privacy Policy</h1>
-
-  <p>This Privacy Policy describes how GW Racing collects, uses, and protects your information when you visit our website.</p>
-
-  <h2>1. Information We Collect</h2>
-  <p>We only collect information you voluntarily provide through our contact form or other direct communication. This includes:</p>
-  <ul>
-    <li>Your email address</li>
-    <li>Your phone number</li>
-  </ul>
-
-  <h2>2. How We Use Your Information</h2>
-  <p>Your information is used only to respond to your inquiries or communicate with you directly. We do not use your data for advertising, tracking, or analytics.</p>
-
-  <h2>3. Data Storage and Security</h2>
-  <p>Your submitted information is stored in secure systems that are regularly updated and maintained. We take reasonable steps to protect your data from unauthorized access, disclosure, or loss.</p>
-
-  <h2>4. No Data Sharing</h2>
-  <p>We do not sell, trade, or share your personal information with third parties. Your data remains strictly confidential.</p>
-
-  <h2>5. Cookies and Tracking</h2>
-  <p>We do not use cookies, tracking pixels, or third-party analytics tools on this website.</p>
-
-  <h2>6. Children’s Privacy</h2>
-  <p>This website is not intended for children under 13. We do not knowingly collect information from minors.</p>
-
-  <h2>7. Your Rights</h2>
-  <p>You may contact us at any time to request that we update or delete your information.</p>
-
-  <h2>8. Updates to This Policy</h2>
-  <p>This Privacy Policy may be updated occasionally. Any changes will be posted on this page with an updated effective date.</p>
-
-  <h2>9. Contact Us</h2>
-  <p>If you have any questions about this Privacy Policy or how we handle your data, contact us at:</p>
-  <ul>
-    <li>Email: <a href="mailto:joshuacortesdesign@gmail.com">joshuacortesdesign@gmail.com</a></li>
-    <li>Phone: <a href="tel:6572396371">657-239-6371</a></li>
-  </ul>
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- Video Cover Section -->
-<div class="video-hero-cover">
-  <video
-    src="https://videos.pexels.com/video-files/5991156/5991156-hd_1280_720_30fps.mp4"
-    autoplay
-    muted
-    loop
-    playsinline
-    preload="auto"
-  ></video>
-  <div class="video-hero-overlay"></div>
-  <div class="video-hero-content">
-    <h2>Unmatched Clarity</h2>
-    <p>Explore our high-performance paint protection films.</p>
-    <a href="/ppf-rolls" class="video-hero-button">Shop PPF Now</a>
-  </div>
+<div class="ticker">
+  🚀 Weekend Class: Dec 1-2, 2025 <a href="/courses">Register Now</a>
 </div>
 
-<style>
-  .video-hero-cover {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-  }
+<nav class="nav">
+  <div class="brand logo"><a href="/">GW Academy</a></div>
+  <input type="checkbox" id="nav-toggle" hidden>
+  <label for="nav-toggle" class="toggle">&#9776;</label>
+  <ul>
+    <li><a href="/in-person-digital-marketing">In-Person Class</a></li>
+    <li><a href="/online-digital-marketing">Online Class</a></li>
+    <li><a href="/portfolio">Portfolios</a></li>
+    <li><a href="/faq">FAQ</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+</nav>
 
-  .video-hero-cover video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    pointer-events: none;
-  }
+<section class="privacy-section">
+  <h1>Privacy Policy</h1>
 
-  .video-hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.45);
-    z-index: 1;
-  }
+  <p>At GW Digital Marketing Academy, your privacy is extremely important to us. This Privacy Policy explains how we collect, use, and protect your personal information when you visit our website or enroll in our courses.</p>
 
-  .video-hero-content {
-    position: relative;
-    z-index: 2;
-    color: white;
-    text-align: center;
-    padding: 2rem;
-    top: 50%;
-    transform: translateY(-50%);
-  }
+  <h2>Information We Collect</h2>
+  <p>We may collect personal information such as your name, email address, phone number, and payment details when you register for classes or fill out contact forms. We also collect non-personal data such as browser type, device information, and site usage statistics.</p>
 
-  .video-hero-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
-  }
+  <h2>How We Use Your Information</h2>
+  <p>Your information is used to provide and improve our services, process enrollments, send course updates, and communicate relevant marketing information (if you opt in). We do not sell or rent your personal data to third parties.</p>
 
-  .video-hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-  }
+  <h2>Cookies</h2>
+  <p>Our website uses cookies to enhance your browsing experience and analyze site traffic. You can adjust your browser settings to refuse cookies if you prefer, though some parts of the site may not function properly.</p>
 
-  .video-hero-button {
-    display: inline-block;
-    background-color: #ff4d00;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    text-decoration: none;
-  }
+  <h2>Data Security</h2>
+  <p>We take reasonable precautions to protect your personal information against loss, misuse, or unauthorized access. However, no online transmission is completely secure, and we cannot guarantee absolute security.</p>
 
-  .video-hero-button:hover {
-    background-color: #e04300;
-  }
+  <h2>Your Rights</h2>
+  <p>You have the right to request access to, correction of, or deletion of your personal information. If you would like to make such a request, please contact us using the information below.</p>
 
-  /* Responsive for larger screens */
-  @media (min-width: 768px) {
-    .video-hero-content h2 {
-      font-size: 3.5rem;
-    }
+  <h2>Third-Party Services</h2>
+  <p>We may use third-party tools (such as Google Analytics or Google Ads) to help us understand how visitors use our site and to improve our services. These providers may collect certain data as governed by their own privacy policies.</p>
 
-    .video-hero-content p {
-      font-size: 1.5rem;
-    }
-  }
-</style>
+  <h2>Contact Us</h2>
+  <p>If you have any questions about this Privacy Policy or how your data is handled, please contact us:</p>
+  <p>Email: <a href="mailto:joshuacortesdesign@gmail.com">joshuacortesdesign@gmail.com</a><br>
+  Phone: <a href="tel:6572396371">(657) 239-6371</a><br>
+  Address: 5600 Argosy Ave Unit 400, Huntington Beach, CA</p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  <h2>Updates to This Policy</h2>
+  <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. The latest version will always be available on this page.</p>
+</section>
 
 <footer class="footer">
   <div class="footer-container">
-
-    <!-- Branding -->
     <div class="footer-brand">
-      <h2 class="logo">GW RACING</h2>
-      <p>High-Performance Racing Products</p>
+      <h2 class="logo">GW Academy</h2>
+      <p>Hands-On Digital Training for Tomorrow’s Creators.</p>
     </div>
 
-    <!-- Navigation Links -->
     <div class="footer-links">
-      <h4>Explore</h4>
+      <h4>Explore</h4><br>
       <ul>
-        <li><a href="/ppf-rolls">PPF Products</a></li>
-        <li><a href="/ppf-bulk-rolls">PPF Bulk Rolls</a></li>
-        <li><a href="/ppf-wrap-wholesale">PPF Wrap Wholesale</a></li>
-        <li><a href="/contact">Contact Us</a></li>
+        <li><a href="/in-person-digital-marketing">In-Person Class</a></li>
+        <li><a href="/online-digital-marketing">Online Class</a></li>
+        <li><a href="/portfolio">Career Portfolios</a></li>
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/contact">Contact</a></li>
       </ul>
     </div>
- 
-    
+
     <div class="footer-company">
-  <h4>Company</h4>
-  <ul>
-    <li><a href="/terms">Terms & Conditions</a></li>
-    <li><a href="/privacy">Privacy Policy</a></li>
-    <li><a href="/accessibility">Accessibility Statement</a></li>
-  </ul>
-</div>
-    
-    
-    <!-- Contact / Legal -->
+      <h4>Company</h4><br>
+      <ul>
+        <li><a href="/terms">Terms & Conditions</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/accessibility">Accessibility</a></li>
+      </ul> 
+    </div>
+
     <div class="footer-info">
-      <h4>Contact</h4>
-      <p><a href="mailto:hello@fooynd.com">joshua.cortes@raynofilm.com</a>
-      <p><a href="tel:6572396371">657-239-6371</a></p></p></br>
-  <p>12827 Telegraph Rd.</br>Los Angeles, CA 90670 U.S.A.</p></br>
-      <p>© <span id="year"></span> GW Racing<br> All rights reserved.</p>
+      <h4>Contact</h4><br>
+      <p><a href="mailto:joshuacortesdesign@gmail.com">joshuacortesdesign@gmail.com</a></p>
+      <p><a href="tel:6572396371">(657) 239-6371</a></p>
+      <br>
+      <p>5600 Argosy Ave Unit 400<br>Huntington Beach, CA</p>
+      <br>
+      <p>© <span id="year"></span> Got Wholesale. All rights reserved.</p>
     </div>
 
-    <!-- Call to Action Button -->
     <div class="footer-cta">
-      <a href="/ppf-rolls" class="btn-build">SHOP PPF</a>
+      <a href="/contact" class="btn-build">Get Started</a>
     </div>
-
   </div>
 </footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
