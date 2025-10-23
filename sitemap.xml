@@ -4,59 +4,60 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
+<!-- created with GW Digital Marketing Academy Sitemap Generator -->
 
 <url>
   <loc>https://got-wholesale.com/</loc>
-  <lastmod>2025-08-12T06:10:38+00:00</lastmod>
+  <lastmod>2025-10-23T06:10:38+00:00</lastmod>
   <priority>1.00</priority>
 </url>
+
 <url>
-  <loc>https://got-wholesale.com/ppf-rolls</loc>
-  <lastmod>2025-08-12T06:10:38+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://got-wholesale.com/in-person-digital-marketing</loc>
+  <lastmod>2025-10-23T06:10:38+00:00</lastmod>
+  <priority>0.90</priority>
 </url>
+
 <url>
-  <loc>https://got-wholesale.com/ppf-bulk-rolls</loc>
-  <lastmod>2025-08-12T06:10:38+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://got-wholesale.com/online-digital-marketing</loc>
+  <lastmod>2025-10-23T06:10:38+00:00</lastmod>
+  <priority>0.90</priority>
 </url>
+
 <url>
-  <loc>https://got-wholesale.com/ppf-wrap-wholesale</loc>
-  <lastmod>2025-08-12T06:10:38+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://got-wholesale.com/portfolio</loc>
+  <lastmod>2025-10-23T06:10:38+00:00</lastmod>
+  <priority>0.85</priority>
 </url>
+
 <url>
-  <loc>https://got-wholesale.com/contact</loc>
-  <lastmod>2025-08-12T06:10:38+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://got-wholesale.com/colored-ppf</loc>
-  <lastmod>2025-08-12T06:10:38+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://got-wholesale.com/dealers</loc>
-  <lastmod>2025-08-12T06:10:38+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://got-wholesale.com/terms</loc>
-  <lastmod>2025-08-12T06:10:38+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://got-wholesale.com/privacy</loc>
-  <lastmod>2025-08-12T06:10:38+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://got-wholesale.com/accessibility</loc>
-  <lastmod>2025-08-12T06:10:38+00:00</lastmod>
+  <loc>https://got-wholesale.com/faq</loc>
+  <lastmod>2025-10-23T06:10:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
+<url>
+  <loc>https://got-wholesale.com/contact</loc>
+  <lastmod>2025-10-23T06:10:38+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://got-wholesale.com/accessibility</loc>
+  <lastmod>2025-10-23T06:10:38+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
+
+<url>
+  <loc>https://got-wholesale.com/privacy</loc>
+  <lastmod>2025-10-23T06:10:38+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
+
+<url>
+  <loc>https://got-wholesale.com/terms</loc>
+  <lastmod>2025-10-23T06:10:38+00:00</lastmod>
+  <priority>0.70</priority>
+</url>
 
 </urlset>
