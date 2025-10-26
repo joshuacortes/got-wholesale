@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Online eCommerce, Design, Digital Marketing & Video Game Design | GW Digital Marketing Academy</title>
+  <meta name="description" content="Join our online classes from anywhere — Learn eCommerce, Web Design, SEO, Graphic Design, Digital Marketing, 3D Design, and Game Creation. Flexible online career portfolio training at GW Digital Marketing Academy.">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17084906274"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17084906274');
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZG635NETPK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZG635NETPK');
+  </script>
+
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #f9f9f9;
+      color: #111;
+      overflow-x: hidden;
+      max-width: 100vw;
+    }
+    a {color: inherit; text-decoration: none;}
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #111;
+      font-style: italic;
+      font-family: verdana;
+      letter-spacing: -2px;
+    }
+    
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin-left: 0;
+    }
+
+    /* limit large font-size only to course lists */
+    .courses-section li {
+      font-size: 1.25rem;
+    }
+
+    /* reset footer list font size */
+    .footer li {
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+    }
+     
+    /* NAVIGATION */
+    .nav {
+      background: #fff;
+      padding: 1rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 3px 0 0 #0071e3, 0 5px 0 0 #111;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .toggle {display:none;}
+    .nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+    .nav ul li a {
+      font-size:1.1rem;
+      font-weight:600;
+      transition:color .3s ease;
+    }
+    .nav ul li a:hover {color:#0071e3;}
+
+    .footer ul {list-style: none; padding-left: 0; margin-left: 0;}
+    .footer-links{width:30%;}
+    .footer-company{width:30%;}
+
+    @media (max-width: 768px) {
+      .footer-links, .footer-company{width:80%;}
+      .toggle {
+        display: block;
+        background:none;
+        border:none;
+        font-size:1.5rem;
+        position:absolute;
+        right:1.5rem;
+        top:1rem;
+        cursor:pointer;
+      }
+      .nav ul {
+        display:none;
+        flex-direction:column;
+        background:#fff;
+        width:100%;
+        position:absolute;
+        left:0;
+        top:100%;
+        padding:1rem;
+        border-top:1px solid #eee;
+      }
+      #nav-toggle:checked ~ ul {display:flex;}
+    }
+
+    /* Ticker Bar */
+    .ticker {
+      background:#f4f4f4;
+      color:#111;
+      font-size:1.05rem;
+      padding:0.6rem 1.5rem;
+      text-align:center;
+      position:sticky;
+      top:0;
+      z-index:100;
+      border-bottom:1px solid #ddd;
+    }
+    .ticker a {color:#0071e3; font-weight:500;}
+    .ticker a:hover {text-decoration:underline;}
+
+    /* MAIN CONTENT */
+    .courses-section {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+      line-height: 1.6;
+    }
+    .courses-section h1 {
+      font-size: 2.3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .courses-section p.intro {
+      text-align: center;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      color: #333;
+    }
+    .courses-section h2 {
+      font-size: 1.5rem;
+      margin-top: 2.5rem;
+      border-left: 4px solid #0071e3;
+      padding-left: 0.75rem;
+    }
+    .courses-section ul {
+      margin-top: 1rem;
+      margin-left: 1.5rem;
+    }
+    .courses-section ul li {
+      margin-bottom: 0.5rem;
+    }
+    .courses-section a:hover {color:#0071e3;}
+
+    /* FOOTER */
+    .footer {
+      background:#ededed;
+      padding:2rem 1.5rem;
+      color:#111;
+      border-top:1px solid #eaeaea;
+      font-size:0.95rem;
+    }
+    .footer-container {
+      display:flex;
+      flex-direction:column;
+      gap:2rem;
+      max-width:1000px;
+      margin:0 auto;
+      align-items:flex-start;
+    }
+    @media(min-width:768px){
+      .footer-container {
+        flex-direction:row;
+        justify-content:space-between;
+        align-items:center;
+      }
+    }
+    .footer a:hover{color:#0071e3;}
+    .btn-build {
+      display:inline-block;
+      background-color:#0071e3;
+      color:#fff;
+      font-weight:700;
+      padding:0.75rem 1.5rem;
+      border-radius:6px;
+      text-align:center;
+      transition:background-color .3s ease, box-shadow .3s ease;
+    }
+    .btn-build:hover {background:#005bb5;}
+  </style>
+</head>
+
+<body>
+
+<div class="ticker">
+  🌐 Online Class: Enroll Anytime — <a href="/register">Join Now</a>
+</div>
+
+<nav class="nav">
+  <div class="brand logo"><a href="/">GW Academy</a></div>
+  <input type="checkbox" id="nav-toggle" hidden>
+  <label for="nav-toggle" class="toggle">&#9776;</label>
+  <ul>
+    <li><a href="/in-person-class-ecommerce-design-digital-marketing-game-creation">In-Person Class</a></li>
+    <li><a href="/online-class-ecommerce-design-digital-marketing-game-creation">Online Class</a></li>
+    <li><a href="/portfolio">Portfolios</a></li>
+    <li><a href="/faq">FAQ</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ONLINE CLASSES CONTENT -->
+<section class="courses-section">
+  <h1>Online Classes: eCommerce, Design, Digital Marketing & Video Game Design</h1>
+  <p class="intro">Learn from anywhere with our online programs in digital marketing, eCommerce, design, and game creation. <br><br>Each class includes live or recorded lessons, projects, and portfolio-building assignments — perfect for students, entrepreneurs, and creative professionals.</p>
+
+  <h2>Beginner / Introduction Courses</h2><br>
+  <ul>
+    <li>
+      <a href="/online-digital-marketing"><b>Digital Marketing</b></a> <br>
+      Learn SEO, web design basics, and how to market brands effectively online.
+      <br>
+      <a href="/online-digital-marketing" class="btn-build" style="font-size:0.9rem; padding:0.4rem 1rem; margin-top:0.4rem; display:inline-block;">Learn More</a>
+    </li>
+<br>
+    <li>
+      <a href="/online-video-game-design"><b>Video Game Design</b></a> <br>
+      Introduction to tools, assets, and building basic interactive levels.
+      <br>
+      <a href="/online-video-game-design" class="btn-build" style="font-size:0.9rem; padding:0.4rem 1rem; margin-top:0.4rem; display:inline-block;">Learn More</a>
+    </li>
+<br>
+    <li>
+      <a href="/online-graphic-design"><b>Graphic Design</b></a> <br>
+      Master the principles of design, composition, and creative visual communication.
+      <br>
+      <a href="/online-graphic-design" class="btn-build" style="font-size:0.9rem; padding:0.4rem 1rem; margin-top:0.4rem; display:inline-block;">Learn More</a>
+    </li>
+  </ul>
+
+  <br>
+  <h2>Advanced / Career Portfolio Development</h2><br>
+  <ul>
+    <li>
+      <a href="/online-web-design"><b>Web Design & E-Commerce</b></a> <br>
+      Build professional websites, manage online stores, and integrate digital payment systems.
+      <br>
+      <a href="/online-web-design" class="btn-build" style="font-size:0.9rem; padding:0.4rem 1rem; margin-top:0.4rem; display:inline-block;">Learn More</a>
+    </li>
+<br>
+    <li>
+      <a href="/online-seo"><b>SEO (Search Engine Optimization)</b></a> <br>
+      Improve search visibility, keyword research, and ranking performance for websites.
+      <br>
+      <a href="/online-seo" class="btn-build" style="font-size:0.9rem; padding:0.4rem 1rem; margin-top:0.4rem; display:inline-block;">Learn More</a>
+    </li>
+<br>
+    <li>
+      <a href="/online-3d-design"><b>3D Design</b></a> <br>
+      Learn 3D modeling for animation, printing, and video game environments.
+      <br>
+      <a href="/online-3d-design" class="btn-build" style="font-size:0.9rem; padding:0.4rem 1rem; margin-top:0.4rem; display:inline-block;">Learn More</a>
+    </li>
+<br>
+    <li>
+      <a href="/online-ecommerce"><b>E-Commerce</b></a> <br>
+      Build and manage online stores, integrate marketing tools, and grow digital brands.
+      <br>
+      <a href="/online-ecommerce" class="btn-build" style="font-size:0.9rem; padding:0.4rem 1rem; margin-top:0.4rem; display:inline-block;">Learn More</a>
+    </li>
+  </ul>
+
+  <br><br>
+  <div style="text-align:center;">
+    <a href="/register" class="btn-build">Register for Online Classes</a><br><br>
+    <a href="/portfolio" class="btn-build" style="background:#555;">View Career Portfolios</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h2 class="logo">GW Academy</h2>
+      <p>Hands-On Digital Training for Tomorrow’s Creators.</p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Explore</h4><br>
+      <ul>
+        <li><a href="/in-person-class-ecommerce-design-digital-marketing-game-creation">In-Person Class</a></li>
+        <li><a href="/online-class-ecommerce-design-digital-marketing-game-creation">Online Class</a></li>
+        <li><a href="/portfolio">Career Portfolios</a></li>
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-company">
+      <h4>Company</h4><br>
+      <ul>
+        <li><a href="/search-location">Search Classes Near Me</a></li>
+        <li><a href="/terms">Terms & Conditions</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+      </ul> 
+    </div>
+
+    <div class="footer-info">
+      <h4>Contact</h4><br>
+      <p><a href="mailto:joshuacortesdesign@gmail.com">joshuacortesdesign@gmail.com</a></p>
+      <p><a href="tel:6572396371">(657) 239-6371</a></p>
+      <br>
+      <p>5600 Argosy Ave Unit 400<br>Huntington Beach, CA</p>
+      <br>
+      <p>© <span id="year"></span> Got Wholesale. All rights reserved.</p>
+    </div>
+
+    <div class="footer-cta">
+      <a href="/contact" class="btn-build">Get Started</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
