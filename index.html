@@ -27,42 +27,39 @@
   <style>
     * {margin:0; padding:0; box-sizing:border-box;}
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: #f9f9f9;
-      color: #111;
-      overflow-x: hidden;
-      max-width: 100vw;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      background:#f9f9f9; color:#111; overflow-x:hidden; max-width:100vw;
     }
-    a {color: inherit; text-decoration: none;}
+    a {color:inherit; text-decoration:none;}
 
     /* TEXT LOGO */
     .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #111;
-      font-style: italic;
-      font-family: verdana;
-      letter-spacing: -2px;
+      font-size:1.5rem;
+      font-weight:bold;
+      color:#111;
+      font-style:italic;
+      font-family:verdana;
+      letter-spacing:-2px;
     }
 
-    /* NAVIGATION */
+    /* NAVIGATION (thicker) */
     .nav {
-      background: #fff;
-      padding: 0.75rem 1.5rem;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      box-shadow: 0 3px 0 0 #0071e3, 0 5px 0 0 #111;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      background:#fff;
+      padding:1rem 1.5rem; /* ← thicker like second template */
+      position:sticky;
+      top:0;
+      z-index:999;
+      box-shadow:0 3px 0 0 #0071e3,0 5px 0 0 #111;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
     }
 
     .toggle {display:none;}
     .nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
+      list-style:none;
+      display:flex;
+      gap:2rem;
     }
     .nav ul li a {
       font-size:1.1rem;
@@ -71,20 +68,9 @@
     }
     .nav ul li a:hover {color:#0071e3;}
 
-    .footer ul {
-      list-style: none;
-      padding-left: 0;
-      margin-left: 0;
-    }
-
-    .footer-links { width:30%; }
-    .footer-company { width:30%; }
-
-    @media (max-width: 768px) {
-      .footer-links, .footer-company { width:80%; }
-
+    @media (max-width:768px){
       .toggle {
-        display: block;
+        display:block;
         background:none;
         border:none;
         font-size:1.5rem;
@@ -195,7 +181,17 @@
         align-items:center;
       }
     }
-    .footer a:hover{color:#0071e3;}
+    .footer ul {
+      list-style:none;
+      padding-left:0;
+      margin-left:0;
+    }
+    .footer-links {width:30%;}
+    .footer-company {width:30%;}
+    @media (max-width:768px){
+      .footer-links, .footer-company {width:80%;}
+    }
+    .footer a:hover {color:#0071e3;}
     .btn-build {
       display:inline-block;
       background-color:#0071e3;
@@ -204,13 +200,13 @@
       padding:0.75rem 1.5rem;
       border-radius:6px;
       text-align:center;
-      transition:background-color .3s ease, box-shadow .3s ease;
+      transition:background-color .3s ease;
     }
     .btn-build:hover {background:#005bb5;}
   </style>
 </head>
 
-<body> 
+<body>
 
 <div class="ticker">
   🚀 In-Person: Nov 29, 2025 <a href="/register">Register Now</a>
@@ -221,13 +217,15 @@
   <input type="checkbox" id="nav-toggle" hidden>
   <label for="nav-toggle" class="toggle">&#9776;</label>
   <ul>
-      <li><a href="/register">Register Now</a></li>
+    <li><a href="/register">Register Now</a></li>
     <li><a href="/in-person-class-ecommerce-design-digital-marketing-game-creation">In-Person Class</a></li>
     <li><a href="/online-class-ecommerce-design-digital-marketing-game-creation">Online Class</a></li>
     <li><a href="/portfolio">Portfolios</a></li>
     <li><a href="/faq">FAQ</a></li>
     <li><a href="/contact">Contact</a></li>
-    <li><a target="blank" style="text-decoration:none;" href="https://instagram.com/learnwholesale"> <img style="width:24px;" src="https://i.postimg.cc/1XmC1hGt/gw-academy-anaheim-digital-marketing-video-game-design-logo-24px-ig.png"/></a> </li>
+    <li><a target="blank" href="https://instagram.com/learnwholesale">
+      <img src="https://i.postimg.cc/1XmC1hGt/gw-academy-anaheim-digital-marketing-video-game-design-logo-24px-ig.png" alt="Instagram">
+    </a></li>
   </ul>
 </nav>
 
@@ -240,7 +238,8 @@
     </div>
   </div>
 
-<br>
+  <br>
+
   <div class="cover-slide" style="background-image:url('https://images.unsplash.com/photo-1600267185296-f7dc4efe939c?auto=format&fit=crop&q=80&w=1170');">
     <div class="cover-content">
       <h2>Online SEO<br>Nov 11-25, 2025</h2>
@@ -249,7 +248,8 @@
     </div>
   </div>
 
-<br>
+  <br>
+
   <div class="cover-slide" style="background-image:url('https://images.unsplash.com/photo-1720962158937-7ea890052166?auto=format&fit=crop&q=80&w=2070');">
     <div class="cover-content">
       <h2>GW Digital Marketing Academy</h2>
@@ -258,7 +258,6 @@
     </div>
   </div>
 </section>
-
 
 <footer class="footer">
   <div class="footer-container">
@@ -302,5 +301,10 @@
     </div>
   </div>
 </footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
