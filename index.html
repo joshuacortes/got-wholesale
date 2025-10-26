@@ -21,7 +21,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-ZG635NETPK');
 </script>
   <style>
@@ -37,8 +36,9 @@
 
     /* LOGO IMAGE */
     .logo img {
-      width: auto;
+      width: 100%;
       max-width: 220px;
+      height: auto;
       display: block;
     }
 
@@ -102,7 +102,12 @@
         border-top:1px solid #eee;
       }
       #nav-toggle:checked ~ ul {display:flex;}
-      .logo img { height:60px; max-width:300px; }
+
+      /* RESPONSIVE LOGO FIX */
+      .logo img {
+        max-width: 150px;
+        height: auto;
+      }
     }
 
     /* Ticker Bar */
