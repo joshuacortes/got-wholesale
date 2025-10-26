@@ -44,14 +44,21 @@
     }
     
     ul {
-  list-style: none;
-  padding-left: 0;
-  margin-left: 0;
-}
+      list-style: none;
+      padding-left: 0;
+      margin-left: 0;
+    }
 
-li {
-  font-size: 1.25rem; /* adjust as needed */
-}
+    /* limit large font-size only to course lists */
+    .courses-section li {
+      font-size: 1.25rem;
+    }
+
+    /* reset footer list font size */
+    .footer li {
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+    }
      
     /* NAVIGATION */
     .nav {
@@ -284,7 +291,7 @@ li {
   
   <br>
   <li>
-    <a href="/in-person-3d-design"><b>E-Commerce</b></a> <br>
+    <a href="/in-person-ecommerce"><b>E-Commerce</b></a> <br>
   Learn how to build and manage online stores, integrate payment systems, and market digital products.
     <br>
     <a href="/in-person-ecommerce" class="btn-build" style="font-size:0.9rem; padding:0.4rem 1rem; margin-top:0.4rem; display:inline-block;">Learn More</a>
