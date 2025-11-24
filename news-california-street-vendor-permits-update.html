@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Got-Wholesale.com</title>
+  <meta name="description" content="GW Academy - Business News, Hands-On Training for Tomorrow’s Creators.">
+  <link rel="icon" href="https://i.postimg.cc/qvkq3mkM/gw-academy-online-anaheim-digital-marketing-web-design-class-favicon-3.png" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17084906274"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17084906274');
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZG635NETPK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZG635NETPK');
+  </script>
+
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      background:#f9f9f9; color:#111; overflow-x:hidden; max-width:100vw;
+    }
+    a {color:inherit; text-decoration:none;}
+
+    /* TEXT LOGO */
+    .logo {
+      font-size:1.055em;
+      font-weight:bold;
+      color:#111;
+      font-style:italic;
+      font-family:verdana;
+      letter-spacing:-2px;
+    }
+
+    /* NAVIGATION (thicker) */
+    .nav {
+      background:#fff;
+      padding:1rem 1.5rem; /* ← thicker like second template */
+      position:sticky;
+      top:0;
+      z-index:999;
+      box-shadow:0 3px 0 0 #0071e3,0 5px 0 0 #111;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .toggle {display:none;}
+    .nav ul {
+      list-style:none;
+      display:flex;
+      gap:2rem;
+    }
+    .nav ul li a {
+      font-size:1.1rem;
+      font-weight:600;
+      transition:color .3s ease;
+    }
+    .nav ul li a:hover {color:#0071e3;}
+
+    @media (max-width:768px){
+      .toggle {
+        display:block;
+        background:none;
+        border:none;
+        font-size:1.5rem;
+        position:absolute;
+        right:1.5rem;
+        top:.75rem;
+        cursor:pointer;
+      }
+      .nav ul {
+        display:none;
+        flex-direction:column;
+        background:#fff;
+        width:100%;
+        position:absolute;
+        left:0;
+        top:100%;
+        padding:1rem;
+        border-top:1px solid #eee;
+      }
+      #nav-toggle:checked ~ ul {display:flex;}
+    }
+
+    /* Ticker Bar */
+    .ticker {
+      background:#f4f4f4;
+      color:#111;
+      font-size:1.05rem;
+      padding:0.6rem 1.5rem;
+      text-align:center;
+      position:sticky;
+      top:0;
+      z-index:100;
+      border-bottom:1px solid #ddd;
+    }
+    .ticker a {color:#0071e3; font-weight:500;}
+    .ticker a:hover {text-decoration:underline;}
+
+    /* COVER SECTION */
+    .cover-section {width:100%; overflow:hidden;}
+    .cover-slide {
+      position:relative;
+      height:45vh;
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .cover-slide::before {
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.7);
+      z-index:1;
+    }
+    .cover-content {
+      position:relative;
+      z-index:2;
+      color:#fff;
+      text-align:center;
+      padding:2rem;
+    }
+    .cover-content h2 {
+      font-size:2rem;
+      margin-bottom:1rem;
+      font-weight:700;
+    }
+    .cover-content p {
+      font-size:1.2rem;
+      margin-bottom:2rem;
+    }
+    .cover-button {
+      background:#0071e3;
+      color:white;
+      padding:0.75rem 1.5rem;
+      border-radius:5px;
+      font-size:1.1rem;
+      font-weight:bold;
+      transition:background .3s;
+    }
+    .cover-button:hover {background:#005bb5;}
+
+    @media (min-width:768px){
+      .cover-content h2{font-size:3.5rem;}
+      .cover-content p{font-size:1.5rem;}
+    }
+
+    /* FOOTER */
+    .footer {
+      background:#ededed;
+      padding:2rem 1.5rem;
+      color:#111;
+      border-top:1px solid #eaeaea;
+      font-size:0.95rem;
+    }
+    .footer-container {
+      display:flex;
+      flex-direction:column;
+      gap:2rem;
+      max-width:1000px;
+      margin:0 auto;
+      align-items:flex-start;
+    }
+    @media(min-width:768px){
+      .footer-container {
+        flex-direction:row;
+        justify-content:space-between;
+        align-items:center;
+      }
+    }
+    .footer ul {
+      list-style:none;
+      padding-left:0;
+      margin-left:0;
+    }
+    .footer-links {width:30%;}
+    .footer-company {width:30%;}
+    @media (max-width:768px){
+      .footer-links, .footer-company {width:80%;}
+    }
+    .footer a:hover {color:#0071e3;}
+    .btn-build {
+      display:inline-block;
+      background-color:#0071e3;
+      color:#fff;
+      font-weight:700;
+      padding:0.75rem 1.5rem;
+      border-radius:6px;
+      text-align:center;
+      transition:background-color .3s ease;
+    }
+    .btn-build:hover {background:#005bb5;}
+  </style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1189512042031215"
+     crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+<div class="ticker">
+Resources: <a href="/register">Small-business grants you can apply for this month </a>
+</div>
+
+<nav class="nav">
+  <div class="brand logo"><a href="/">Got-Wholesale.com</a></div>
+  <input type="checkbox" id="nav-toggle" hidden>
+  <label for="nav-toggle" class="toggle">&#9776;</label>
+  <ul>
+      <li><a href="/">Home</a></li>
+    <li><a href="/news">News</a></li>
+      <li><a href="/training">Training</a></li>
+    <li><a href="/resources">Resources</a></li>
+    <li><a href="/survey">Surveys & Polls</a></li>
+    <li><a href="/contact">Contact</a></li>
+    <li><a target="blank" style="text-decoration:none;"href="https://instagram.com/learnwholesale">
+      <img src="https://i.postimg.cc/1XmC1hGt/gw-academy-anaheim-digital-marketing-video-game-design-logo-24px-ig.png" alt="Instagram">
+    </a></li>
+  </ul>
+</nav>
+
+  
+  
+  <br><br>
+  <style>
+  /* Blog Container */
+  .blog-post-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.7;
+    color: #111;
+  }
+
+  /* Headings */
+  .blog-post-container h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  .blog-post-container h2 {
+    font-size: 1.6rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: #0071e3;
+  }
+  .blog-post-container h3 {
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+
+  /* Paragraphs and Links */
+  .blog-post-container p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  .blog-post-container a {
+    color: #0071e3;
+    text-decoration: none;
+  }
+  .blog-post-container a:hover {
+    text-decoration: underline;
+  }
+
+  /* Lists */
+  .blog-post-container ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .blog-post-container li {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .blog-post-container {
+      margin: 1rem;
+      padding: 1rem;
+    }
+    .blog-post-container h1 {
+      font-size: 1.6rem;
+    }
+    .blog-post-container h2 {
+      font-size: 1.3rem;
+    }
+    .blog-post-container h3 {
+      font-size: 1.1rem;
+    }
+  }
+</style>
+
+<article class="blog-post-container">
+
+  <h1>California Updates Street-Vendor Rules to Support Micro-Entrepreneurs</h1>
+
+  <p><strong>Source:</strong> NBC Bay Area</p>
+  <p><strong>Summary:</strong> California has revised its street-vendor regulations, aiming to make it easier for micro-entrepreneurs to operate legally and thrive in major cities. The new guidelines reduce bureaucratic barriers and streamline permit processes.</p>
+
+  <h2>Introduction</h2>
+  <p>Street vendors are a vital part of California’s economy and cultural landscape, providing affordable food, artisanal goods, and services to local communities. However, many vendors have faced challenges navigating complex legal requirements. Recent updates to street-vendor rules aim to simplify operations and encourage entrepreneurship.</p>
+
+  <h2>Key Changes in the Street-Vendor Rules</h2>
+  <p>The updated regulations introduce several important changes:</p>
+  <ul>
+    <li><strong>Streamlined Permitting:</strong> New processes reduce application complexity and processing time.</li>
+    <li><strong>Flexible Operational Zones:</strong> Vendors can now operate in more areas with fewer location restrictions.</li>
+    <li><strong>Health and Safety Compliance:</strong> Updated standards make compliance easier while maintaining public health safeguards.</li>
+    <li><strong>Support Programs:</strong> Micro-entrepreneurs may now access guidance, resources, and small-business assistance to grow their operations.</li>
+  </ul>
+
+  <h2>Impact on Micro-Entrepreneurs</h2>
+  <p>The revised regulations are expected to have significant positive effects:</p>
+  <ul>
+    <li><strong>Reduced Legal Barriers:</strong> Simplified rules allow vendors to focus more on their business rather than paperwork.</li>
+    <li><strong>Increased Revenue Opportunities:</strong> More legal operational zones can attract larger customer bases.</li>
+    <li><strong>Greater Business Stability:</strong> Clearer guidelines reduce fines and compliance issues.</li>
+    <li><strong>Enhanced Community Engagement:</strong> Street vendors contribute to vibrant local neighborhoods and cultural diversity.</li>
+  </ul>
+
+  <h2>Challenges Still Remaining</h2>
+  <p>Despite the updates, vendors still face several challenges:</p>
+  <ul>
+    <li><strong>Competition:</strong> With easier entry, competition among vendors may increase.</li>
+    <li><strong>Insurance Costs:</strong> Some micro-entrepreneurs may struggle with liability insurance requirements.</li>
+    <li><strong>Ongoing Regulatory Changes:</strong> City-specific rules may differ, requiring vendors to stay informed across jurisdictions.</li>
+  </ul>
+
+  <h2>Opportunities for Growth</h2>
+  <p>The new rules open opportunities for micro-entrepreneurs to expand their operations:</p>
+  <ul>
+    <li>Launching mobile food trucks or pop-up shops in high-traffic areas.</li>
+    <li>Partnering with local events, markets, and festivals to boost sales.</li>
+    <li>Utilizing social media to attract new customers and communicate legal operating zones.</li>
+    <li>Collaborating with local small-business organizations for mentorship and support.</li>
+  </ul>
+
+  <h2>Conclusion</h2>
+  <p>California’s updated street-vendor rules are a significant step toward empowering micro-entrepreneurs. By reducing bureaucratic hurdles and providing clearer guidance, these changes help small vendors operate legally and sustainably, contributing to the state’s economic diversity and cultural vibrancy.</p>
+
+  <p>For more information and resources for street vendors, visit <a href="https://www.nbcbayarea.com/news/local">NBC Bay Area News</a>.</p>
+
+</article>
+
+  
+  <br><Br>
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h2 class="logo">Got-Wholesale.com</h2>
+      <p>Sales/Marketing Magazine & Training</p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Explore</h4><br>
+      <ul>
+        <li><a href="/news">News</a></li>
+        <li><a href="/training">Training</a></li>
+        <li><a href="/resources">Resources</a></li>
+        <li><a href="/survey">Surveys & Polls</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-company">
+      <h4>Training</h4><br>
+      <ul>
+        <li><a href="/online-class-ecommerce-design-digital-marketing-game-creation">Online Training</a></li>
+        <li><a href="/in-person-class-ecommerce-design-digital-marketing-game-creation">In Person Training</a></li>
+        <li><a href="/search-location">Search Training Near Me</a></li>
+        <li><a href="/faq">Training FAQ</a></li>
+        <li><a href="/terms">Terms & Conditions</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+      </ul> 
+    </div>
+
+    <div class="footer-info">
+      <h4>Contact</h4><br>
+      <p><a href="mailto:joshuacortesdesign@gmail.com">info@got-wholesale.com</a></p>
+      <p><a href="tel:6572396371">(657) 239-6371</a></p>
+      <br>
+      <p>5600 Argosy Ave Unit 400<br>Huntington Beach, CA</p>
+      <br>
+      <p>© <span id="year"></span> Got Wholesale. All rights reserved.</p>
+    </div>
+
+    <div class="footer-cta">
+      <a href="/resources" class="btn-build">Owner Resources</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
+
+
+
