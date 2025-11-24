@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Got-Wholesale.com</title>
+  <meta name="description" content="GW Academy - Business News, Hands-On Training for Tomorrow’s Creators.">
+  <link rel="icon" href="https://i.postimg.cc/qvkq3mkM/gw-academy-online-anaheim-digital-marketing-web-design-class-favicon-3.png" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17084906274"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17084906274');
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZG635NETPK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZG635NETPK');
+  </script>
+
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      background:#f9f9f9; color:#111; overflow-x:hidden; max-width:100vw;
+    }
+    a {color:inherit; text-decoration:none;}
+
+    /* TEXT LOGO */
+    .logo {
+      font-size:1.055em;
+      font-weight:bold;
+      color:#111;
+      font-style:italic;
+      font-family:verdana;
+      letter-spacing:-2px;
+    }
+
+    /* NAVIGATION (thicker) */
+    .nav {
+      background:#fff;
+      padding:1rem 1.5rem; /* ← thicker like second template */
+      position:sticky;
+      top:0;
+      z-index:999;
+      box-shadow:0 3px 0 0 #0071e3,0 5px 0 0 #111;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .toggle {display:none;}
+    .nav ul {
+      list-style:none;
+      display:flex;
+      gap:2rem;
+    }
+    .nav ul li a {
+      font-size:1.1rem;
+      font-weight:600;
+      transition:color .3s ease;
+    }
+    .nav ul li a:hover {color:#0071e3;}
+
+    @media (max-width:768px){
+      .toggle {
+        display:block;
+        background:none;
+        border:none;
+        font-size:1.5rem;
+        position:absolute;
+        right:1.5rem;
+        top:.75rem;
+        cursor:pointer;
+      }
+      .nav ul {
+        display:none;
+        flex-direction:column;
+        background:#fff;
+        width:100%;
+        position:absolute;
+        left:0;
+        top:100%;
+        padding:1rem;
+        border-top:1px solid #eee;
+      }
+      #nav-toggle:checked ~ ul {display:flex;}
+    }
+
+    /* Ticker Bar */
+    .ticker {
+      background:#f4f4f4;
+      color:#111;
+      font-size:1.05rem;
+      padding:0.6rem 1.5rem;
+      text-align:center;
+      position:sticky;
+      top:0;
+      z-index:100;
+      border-bottom:1px solid #ddd;
+    }
+    .ticker a {color:#0071e3; font-weight:500;}
+    .ticker a:hover {text-decoration:underline;}
+
+    /* COVER SECTION */
+    .cover-section {width:100%; overflow:hidden;}
+    .cover-slide {
+      position:relative;
+      height:45vh;
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .cover-slide::before {
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.7);
+      z-index:1;
+    }
+    .cover-content {
+      position:relative;
+      z-index:2;
+      color:#fff;
+      text-align:center;
+      padding:2rem;
+    }
+    .cover-content h2 {
+      font-size:2rem;
+      margin-bottom:1rem;
+      font-weight:700;
+    }
+    .cover-content p {
+      font-size:1.2rem;
+      margin-bottom:2rem;
+    }
+    .cover-button {
+      background:#0071e3;
+      color:white;
+      padding:0.75rem 1.5rem;
+      border-radius:5px;
+      font-size:1.1rem;
+      font-weight:bold;
+      transition:background .3s;
+    }
+    .cover-button:hover {background:#005bb5;}
+
+    @media (min-width:768px){
+      .cover-content h2{font-size:3.5rem;}
+      .cover-content p{font-size:1.5rem;}
+    }
+
+    /* FOOTER */
+    .footer {
+      background:#ededed;
+      padding:2rem 1.5rem;
+      color:#111;
+      border-top:1px solid #eaeaea;
+      font-size:0.95rem;
+    }
+    .footer-container {
+      display:flex;
+      flex-direction:column;
+      gap:2rem;
+      max-width:1000px;
+      margin:0 auto;
+      align-items:flex-start;
+    }
+    @media(min-width:768px){
+      .footer-container {
+        flex-direction:row;
+        justify-content:space-between;
+        align-items:center;
+      }
+    }
+    .footer ul {
+      list-style:none;
+      padding-left:0;
+      margin-left:0;
+    }
+    .footer-links {width:30%;}
+    .footer-company {width:30%;}
+    @media (max-width:768px){
+      .footer-links, .footer-company {width:80%;}
+    }
+    .footer a:hover {color:#0071e3;}
+    .btn-build {
+      display:inline-block;
+      background-color:#0071e3;
+      color:#fff;
+      font-weight:700;
+      padding:0.75rem 1.5rem;
+      border-radius:6px;
+      text-align:center;
+      transition:background-color .3s ease;
+    }
+    .btn-build:hover {background:#005bb5;}
+  </style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1189512042031215"
+     crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+<div class="ticker">
+Resources: <a href="/register">Small-business grants you can apply for this month </a>
+</div>
+
+<nav class="nav">
+  <div class="brand logo"><a href="/">Got-Wholesale.com</a></div>
+  <input type="checkbox" id="nav-toggle" hidden>
+  <label for="nav-toggle" class="toggle">&#9776;</label>
+  <ul>
+      <li><a href="/">Home</a></li>
+    <li><a href="/news">News</a></li>
+      <li><a href="/training">Training</a></li>
+    <li><a href="/resources">Resources</a></li>
+    <li><a href="/survey">Surveys & Polls</a></li>
+    <li><a href="/contact">Contact</a></li>
+    <li><a target="blank" style="text-decoration:none;"href="https://instagram.com/learnwholesale">
+      <img src="https://i.postimg.cc/1XmC1hGt/gw-academy-anaheim-digital-marketing-video-game-design-logo-24px-ig.png" alt="Instagram">
+    </a></li>
+  </ul>
+</nav>
+
+  
+  
+  <br><br>
+  
+  <style>
+  /* Blog Container */
+  .blog-post-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.7;
+    color: #111;
+  }
+
+  /* Headings */
+  .blog-post-container h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  .blog-post-container h2 {
+    font-size: 1.6rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: #0071e3;
+  }
+  .blog-post-container h3 {
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+
+  /* Paragraphs and Links */
+  .blog-post-container p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  .blog-post-container a {
+    color: #0071e3;
+    text-decoration: none;
+  }
+  .blog-post-container a:hover {
+    text-decoration: underline;
+  }
+
+  /* Lists */
+  .blog-post-container ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .blog-post-container li {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Highlight Box */
+  .highlight-box {
+    background: #f0f8ff;
+    border-left: 4px solid #0071e3;
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+    border-radius: 6px;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .blog-post-container {
+      margin: 1rem;
+      padding: 1rem;
+    }
+    .blog-post-container h1 {
+      font-size: 1.6rem;
+    }
+    .blog-post-container h2 {
+      font-size: 1.3rem;
+    }
+    .blog-post-container h3 {
+      font-size: 1.1rem;
+    }
+  }
+</style>
+
+<article class="blog-post-container">
+
+  <h1>‘Everyone is Hunkering Down.’ The Affordability Crisis Rattles Mom-and-Pop Shops</h1>
+
+  <p><strong>Overview:</strong> Small businesses nationwide are facing a perfect storm of financial pressures. Rising import costs, increased payroll obligations, and limited access to affordable credit are squeezing margins for independent retailers, cafés, service providers, and other mom-and-pop shops.</p>
+
+  <h2>Rising Costs Affect Operations</h2>
+  <p>Small business owners are reporting that operational costs have escalated sharply:</p>
+  <ul>
+    <li><strong>Imports & Inventory:</strong> Global supply chain disruptions continue to inflate the cost of imported goods, forcing small retailers to either absorb higher prices or pass them on to customers.</li>
+    <li><strong>Payroll:</strong> Rising minimum wages and competitive labor markets have increased staffing expenses.</li>
+    <li><strong>Utilities & Rent:</strong> Essential overhead costs, including commercial rents and utility bills, remain a major challenge, particularly in high-demand urban areas.</li>
+  </ul>
+
+  <div class="highlight-box">
+    <h3>Insight:</h3>
+    <p>Many mom-and-pop shops are adopting cost-cutting strategies and focusing on core revenue streams to survive in this challenging economic environment.</p>
+  </div>
+
+  <h2>Credit Crunch Limits Flexibility</h2>
+  <p>Bank lending has tightened, leaving small business owners with fewer options to finance operations or expansions:</p>
+  <ul>
+    <li><strong>Reduced Loan Approvals:</strong> Traditional banks are approving fewer small business loans due to perceived risk.</li>
+    <li><strong>Higher Interest Rates:</strong> When credit is available, interest rates have increased, further constraining budgets.</li>
+    <li><strong>Alternative Lending:</strong> Many owners are turning to non-bank lenders, though terms often come with higher costs.</li>
+  </ul>
+
+  <h2>How Businesses Are Responding</h2>
+  <p>Despite these pressures, small business owners are finding creative ways to weather the storm:</p>
+  <ul>
+    <li>Streamlining operations to reduce waste and maximize efficiency.</li>
+    <li>Focusing on high-margin products or services to improve profitability.</li>
+    <li>Exploring online and delivery channels to reach new customers and increase revenue streams.</li>
+    <li>Collaborating with other local businesses to share resources and marketing efforts.</li>
+  </ul>
+
+  <h2>Community & Policy Implications</h2>
+  <p>The affordability crisis extends beyond individual businesses. It has broader economic and social implications:</p>
+  <ul>
+    <li>Reduced hiring and slower wage growth in the small business sector.</li>
+    <li>Higher prices for consumers as businesses pass on cost increases.</li>
+    <li>Potential closures of independent stores, impacting local communities and economies.</li>
+    <li>Policy interventions may be necessary to support access to affordable credit and small business sustainability.</li>
+  </ul>
+
+  <h2>Conclusion</h2>
+  <p>The current affordability crisis is forcing small business owners to adapt quickly. Strategic financial management, diversification of revenue streams, and creative problem-solving are key to survival. While challenging, those who innovate and leverage community and alternative resources can emerge stronger in the post-crisis market.</p>
+
+  <p>For mom-and-pop shops across the nation, understanding trends, controlling costs, and maintaining customer loyalty will remain essential in navigating these turbulent economic times.</p>
+
+</article>
+
+  <br><Br>
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h2 class="logo">Got-Wholesale.com</h2>
+      <p>Sales/Marketing Magazine & Training</p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Explore</h4><br>
+      <ul>
+        <li><a href="/news">News</a></li>
+        <li><a href="/training">Training</a></li>
+        <li><a href="/resources">Resources</a></li>
+        <li><a href="/survey">Surveys & Polls</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-company">
+      <h4>Training</h4><br>
+      <ul>
+        <li><a href="/online-class-ecommerce-design-digital-marketing-game-creation">Online Training</a></li>
+        <li><a href="/in-person-class-ecommerce-design-digital-marketing-game-creation">In Person Training</a></li>
+        <li><a href="/search-location">Search Training Near Me</a></li>
+        <li><a href="/faq">Training FAQ</a></li>
+        <li><a href="/terms">Terms & Conditions</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+      </ul> 
+    </div>
+
+    <div class="footer-info">
+      <h4>Contact</h4><br>
+      <p><a href="mailto:joshuacortesdesign@gmail.com">info@got-wholesale.com</a></p>
+      <p><a href="tel:6572396371">(657) 239-6371</a></p>
+      <br>
+      <p>5600 Argosy Ave Unit 400<br>Huntington Beach, CA</p>
+      <br>
+      <p>© <span id="year"></span> Got Wholesale. All rights reserved.</p>
+    </div>
+
+    <div class="footer-cta">
+      <a href="/resources" class="btn-build">Owner Resources</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
+
+
+
