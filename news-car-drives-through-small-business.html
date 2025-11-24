@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Got-Wholesale.com</title>
+  <meta name="description" content="GW Academy - Business News, Hands-On Training for Tomorrow’s Creators.">
+  <link rel="icon" href="https://i.postimg.cc/qvkq3mkM/gw-academy-online-anaheim-digital-marketing-web-design-class-favicon-3.png" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17084906274"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17084906274');
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZG635NETPK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZG635NETPK');
+  </script>
+
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      background:#f9f9f9; color:#111; overflow-x:hidden; max-width:100vw;
+    }
+    a {color:inherit; text-decoration:none;}
+
+    /* TEXT LOGO */
+    .logo {
+      font-size:1.055em;
+      font-weight:bold;
+      color:#111;
+      font-style:italic;
+      font-family:verdana;
+      letter-spacing:-2px;
+    }
+
+    /* NAVIGATION (thicker) */
+    .nav {
+      background:#fff;
+      padding:1rem 1.5rem; /* ← thicker like second template */
+      position:sticky;
+      top:0;
+      z-index:999;
+      box-shadow:0 3px 0 0 #0071e3,0 5px 0 0 #111;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .toggle {display:none;}
+    .nav ul {
+      list-style:none;
+      display:flex;
+      gap:2rem;
+    }
+    .nav ul li a {
+      font-size:1.1rem;
+      font-weight:600;
+      transition:color .3s ease;
+    }
+    .nav ul li a:hover {color:#0071e3;}
+
+    @media (max-width:768px){
+      .toggle {
+        display:block;
+        background:none;
+        border:none;
+        font-size:1.5rem;
+        position:absolute;
+        right:1.5rem;
+        top:.75rem;
+        cursor:pointer;
+      }
+      .nav ul {
+        display:none;
+        flex-direction:column;
+        background:#fff;
+        width:100%;
+        position:absolute;
+        left:0;
+        top:100%;
+        padding:1rem;
+        border-top:1px solid #eee;
+      }
+      #nav-toggle:checked ~ ul {display:flex;}
+    }
+
+    /* Ticker Bar */
+    .ticker {
+      background:#f4f4f4;
+      color:#111;
+      font-size:1.05rem;
+      padding:0.6rem 1.5rem;
+      text-align:center;
+      position:sticky;
+      top:0;
+      z-index:100;
+      border-bottom:1px solid #ddd;
+    }
+    .ticker a {color:#0071e3; font-weight:500;}
+    .ticker a:hover {text-decoration:underline;}
+
+    /* COVER SECTION */
+    .cover-section {width:100%; overflow:hidden;}
+    .cover-slide {
+      position:relative;
+      height:45vh;
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .cover-slide::before {
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.7);
+      z-index:1;
+    }
+    .cover-content {
+      position:relative;
+      z-index:2;
+      color:#fff;
+      text-align:center;
+      padding:2rem;
+    }
+    .cover-content h2 {
+      font-size:2rem;
+      margin-bottom:1rem;
+      font-weight:700;
+    }
+    .cover-content p {
+      font-size:1.2rem;
+      margin-bottom:2rem;
+    }
+    .cover-button {
+      background:#0071e3;
+      color:white;
+      padding:0.75rem 1.5rem;
+      border-radius:5px;
+      font-size:1.1rem;
+      font-weight:bold;
+      transition:background .3s;
+    }
+    .cover-button:hover {background:#005bb5;}
+
+    @media (min-width:768px){
+      .cover-content h2{font-size:3.5rem;}
+      .cover-content p{font-size:1.5rem;}
+    }
+
+    /* FOOTER */
+    .footer {
+      background:#ededed;
+      padding:2rem 1.5rem;
+      color:#111;
+      border-top:1px solid #eaeaea;
+      font-size:0.95rem;
+    }
+    .footer-container {
+      display:flex;
+      flex-direction:column;
+      gap:2rem;
+      max-width:1000px;
+      margin:0 auto;
+      align-items:flex-start;
+    }
+    @media(min-width:768px){
+      .footer-container {
+        flex-direction:row;
+        justify-content:space-between;
+        align-items:center;
+      }
+    }
+    .footer ul {
+      list-style:none;
+      padding-left:0;
+      margin-left:0;
+    }
+    .footer-links {width:30%;}
+    .footer-company {width:30%;}
+    @media (max-width:768px){
+      .footer-links, .footer-company {width:80%;}
+    }
+    .footer a:hover {color:#0071e3;}
+    .btn-build {
+      display:inline-block;
+      background-color:#0071e3;
+      color:#fff;
+      font-weight:700;
+      padding:0.75rem 1.5rem;
+      border-radius:6px;
+      text-align:center;
+      transition:background-color .3s ease;
+    }
+    .btn-build:hover {background:#005bb5;}
+  </style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1189512042031215"
+     crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+<div class="ticker">
+Resources: <a href="/register">Small-business grants you can apply for this month </a>
+</div>
+
+<nav class="nav">
+  <div class="brand logo"><a href="/">Got-Wholesale.com</a></div>
+  <input type="checkbox" id="nav-toggle" hidden>
+  <label for="nav-toggle" class="toggle">&#9776;</label>
+  <ul>
+      <li><a href="/">Home</a></li>
+    <li><a href="/news">News</a></li>
+      <li><a href="/training">Training</a></li>
+    <li><a href="/resources">Resources</a></li>
+    <li><a href="/survey">Surveys & Polls</a></li>
+    <li><a href="/contact">Contact</a></li>
+    <li><a target="blank" style="text-decoration:none;"href="https://instagram.com/learnwholesale">
+      <img src="https://i.postimg.cc/1XmC1hGt/gw-academy-anaheim-digital-marketing-video-game-design-logo-24px-ig.png" alt="Instagram">
+    </a></li>
+  </ul>
+</nav>
+
+  
+  
+  <br><br>
+  
+  <style>
+  .blog-post-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.7;
+    color: #111;
+  }
+
+  .blog-post-container h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .blog-post-container h2 {
+    font-size: 1.6rem;
+    color: #0071e3;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .blog-post-container h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .blog-post-container p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .blog-post-container ul {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .blog-post-container li {
+    margin-bottom: 0.5rem;
+  }
+
+  .highlight-box {
+    background: #f7faff;
+    border-left: 4px solid #0071e3;
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    margin: 1.5rem 0;
+  }
+
+  @media (max-width: 768px) {
+    .blog-post-container {
+      margin: 1rem;
+      padding: 1rem;
+    }
+    .blog-post-container h1 { font-size: 1.6rem; }
+    .blog-post-container h2 { font-size: 1.3rem; }
+    .blog-post-container h3 { font-size: 1.1rem; }
+  }
+</style>
+
+<article class="blog-post-container">
+
+<h1>Car Drives Through Walls of Harrah Small Business: Local Coffee Shop Begins Rebuild After Costly Crash</h1>
+
+<p><strong>Harrah, OK —</strong> A beloved local coffee shop is picking up the pieces after a car crashed through its front wall, causing major damage and temporarily shutting down operations. The incident, which occurred earlier this week, has left the community stunned — but also eager to support the small business as it begins planning its rebuild.</p>
+
+<h2>A Shocking Moment for a Community Staple</h2>
+<p>The crash happened unexpectedly during regular morning hours, when the coffee shop was preparing for its usual flow of customers. According to early reports, a vehicle lost control and barreled directly into the front of the building, breaking through two exterior walls and leaving debris scattered throughout the café.</p>
+
+<p>Fortunately, no customers or staff members sustained serious injuries, but the structural damage was significant. Windows were shattered, furniture was destroyed, and key equipment was damaged beyond repair.</p>
+
+<div class="highlight-box">
+  <h3>Owner’s Note:</h3>
+  <p>“It’s heartbreaking to see the shop like this, but we’re grateful everyone is safe. We’re ready to rebuild and come back stronger,” the owner shared with News 9.</p>
+</div>
+
+<h2>Assessing the Damage</h2>
+<p>Local inspectors have confirmed that the building’s façade, interior framing, and several load-bearing sections were impacted. Cleanup crews have been working to remove broken materials, assess long-term safety concerns, and begin initial restoration steps.</p>
+
+<p>Among the damages reported:</p>
+<ul>
+  <li>Two large holes in the building’s exterior walls</li>
+  <li>Shattered windows and broken storefront glass</li>
+  <li>Destroyed chairs, tables, and shelving</li>
+  <li>Damaged espresso machines and commercial coffee equipment</li>
+  <li>Electrical and plumbing repairs required</li>
+</ul>
+
+<p>Insurance adjusters are currently evaluating the cost of the rebuild, which is expected to be substantial due to structural repairs and equipment replacement.</p>
+
+<h2>Community Support Begins to Pour In</h2>
+<p>Harrah residents have rallied around the coffee shop, offering donations, volunteer cleanup efforts, and messages of encouragement. The shop has long been a local favorite — a place where friends meet, students study, and families gather.</p>
+
+<p>The overwhelming community response underscores just how important small businesses are to the heartbeat of the town.</p>
+
+<div class="highlight-box">
+  <h3>Community Insight:</h3>
+  <p>Local customers have launched a grassroots fundraiser to help the café’s employees maintain financial stability during the closure.</p>
+</div>
+
+<h2>The Road to Rebuilding</h2>
+<p>Despite the damage, the owners remain optimistic. Rebuilding plans are already in motion, and the shop hopes to reopen as soon as construction and inspections allow. The team is working closely with contractors to draft a timeline for renovations.</p>
+
+<p>Key steps in the rebuild include:</p>
+<ul>
+  <li>Securing the damaged walls and removing unstable materials</li>
+  <li>Full structural assessment from licensed engineers</li>
+  <li>Installing new storefront windows and doors</li>
+  <li>Repainting, remodeling, and updating interior spaces</li>
+  <li>Purchasing and installing new coffee equipment</li>
+</ul>
+
+<p>Some customers have suggested using the unexpected closure as an opportunity to expand the shop’s layout or refresh its décor — ideas the owners say they are considering.</p>
+
+<h2>How the Crash Impacts Local Businesses</h2>
+<p>This incident highlights the vulnerability of small businesses when unforeseen events disrupt operations. While larger chains often have financial buffers, local shops rely heavily on consistent foot traffic and regular sales to stay afloat.</p>
+
+<p>Events like this — from accidents to natural disasters — can strain resources and force temporary closures that impact revenue and staffing.</p>
+
+<ul>
+  <li>Employees may lose hours or face temporary layoffs</li>
+  <li>Suppliers lose a regular customer</li>
+  <li>Nearby shops may see decreased traffic</li>
+  <li>Local residents lose a gathering spot</li>
+</ul>
+
+<p>The Harrah community, aware of these challenges, continues to advocate for supporting the café during its rebuild process.</p>
+
+<h2>Looking Ahead: A Stronger Comeback</h2>
+<p>Despite the setback, the owners are determined to return better than before. They plan to keep customers updated through social media, sharing progress photos, renovation updates, and reopening details.</p>
+
+<div class="highlight-box">
+  <h3>Positive Outlook:</h3>
+  <p>“This is a tough moment, but not the end. We’ll be back — and we can’t wait to welcome everyone through our doors again,” the shop posted online.</p>
+</div>
+
+<h2>Conclusion</h2>
+<p>The crash that damaged the Harrah coffee shop may have disrupted business, but it also revealed the resilience and unity of the community. With strong local support, dedicated owners, and a rebuilding plan already underway, the café is expected to make a full comeback.</p>
+
+<p>For residents, the reopening will symbolize more than just a repaired storefront — it will represent the spirit of Harrah, where small businesses and community members lift each other up in times of need.</p>
+
+</article>
+
+  <br><Br>
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h2 class="logo">Got-Wholesale.com</h2>
+      <p>Sales/Marketing Magazine & Training</p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Explore</h4><br>
+      <ul>
+        <li><a href="/news">News</a></li>
+        <li><a href="/training">Training</a></li>
+        <li><a href="/resources">Resources</a></li>
+        <li><a href="/survey">Surveys & Polls</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-company">
+      <h4>Training</h4><br>
+      <ul>
+        <li><a href="/online-class-ecommerce-design-digital-marketing-game-creation">Online Training</a></li>
+        <li><a href="/in-person-class-ecommerce-design-digital-marketing-game-creation">In Person Training</a></li>
+        <li><a href="/search-location">Search Training Near Me</a></li>
+        <li><a href="/faq">Training FAQ</a></li>
+        <li><a href="/terms">Terms & Conditions</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+      </ul> 
+    </div>
+
+    <div class="footer-info">
+      <h4>Contact</h4><br>
+      <p><a href="mailto:joshuacortesdesign@gmail.com">info@got-wholesale.com</a></p>
+      <p><a href="tel:6572396371">(657) 239-6371</a></p>
+      <br>
+      <p>5600 Argosy Ave Unit 400<br>Huntington Beach, CA</p>
+      <br>
+      <p>© <span id="year"></span> Got Wholesale. All rights reserved.</p>
+    </div>
+
+    <div class="footer-cta">
+      <a href="/resources" class="btn-build">Owner Resources</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
+
+
+
