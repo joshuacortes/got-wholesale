@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>California Small Business Sales/Marketing Magazine & Training - Got-wholesale.com</title>
+  <meta name="description" content="GW Academy - Business News, Hands-On Training for Tomorrow’s Creators.">
+  <link rel="icon" href="https://i.postimg.cc/qvkq3mkM/gw-academy-online-anaheim-digital-marketing-web-design-class-favicon-3.png" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17084906274"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17084906274');
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZG635NETPK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZG635NETPK');
+  </script>
+
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      background:#f9f9f9; color:#111; overflow-x:hidden; max-width:100vw;
+    }
+    a {color:inherit; text-decoration:none;}
+
+    /* TEXT LOGO */
+    .logo {
+      font-size:1.055em;
+      font-weight:bold;
+      color:#111;
+      font-style:italic;
+      font-family:verdana;
+      letter-spacing:-2px;
+    }
+
+    /* NAVIGATION (thicker) */
+    .nav {
+      background:#fff;
+      padding:1rem 1.5rem; /* ← thicker like second template */
+      position:sticky;
+      top:0;
+      z-index:999;
+      box-shadow:0 3px 0 0 #0071e3,0 5px 0 0 #111;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .toggle {display:none;}
+    .nav ul {
+      list-style:none;
+      display:flex;
+      gap:2rem;
+    }
+    .nav ul li a {
+      font-size:1.1rem;
+      font-weight:600;
+      transition:color .3s ease;
+    }
+    .nav ul li a:hover {color:#0071e3;}
+
+    @media (max-width:768px){
+      .toggle {
+        display:block;
+        background:none;
+        border:none;
+        font-size:1.5rem;
+        position:absolute;
+        right:1.5rem;
+        top:.75rem;
+        cursor:pointer;
+      }
+      .nav ul {
+        display:none;
+        flex-direction:column;
+        background:#fff;
+        width:100%;
+        position:absolute;
+        left:0;
+        top:100%;
+        padding:1rem;
+        border-top:1px solid #eee;
+      }
+      #nav-toggle:checked ~ ul {display:flex;}
+    }
+
+    /* Ticker Bar */
+    .ticker {
+      background:#f4f4f4;
+      color:#111;
+      font-size:1.05rem;
+      padding:0.6rem 1.5rem;
+      text-align:center;
+      position:sticky;
+      top:0;
+      z-index:100;
+      border-bottom:1px solid #ddd;
+    }
+    .ticker a {color:#0071e3; font-weight:500;}
+    .ticker a:hover {text-decoration:underline;}
+
+    /* COVER SECTION */
+    .cover-section {width:100%; overflow:hidden;}
+    .cover-slide {
+      position:relative;
+      height:45vh;
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .cover-slide::before {
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.7);
+      z-index:1;
+    }
+    .cover-content {
+      position:relative;
+      z-index:2;
+      color:#fff;
+      text-align:center;
+      padding:2rem;
+    }
+    .cover-content h2 {
+      font-size:2rem;
+      margin-bottom:1rem;
+      font-weight:700;
+    }
+    .cover-content p {
+      font-size:1.2rem;
+      margin-bottom:2rem;
+    }
+    .cover-button {
+      background:#0071e3;
+      color:white;
+      padding:0.75rem 1.5rem;
+      border-radius:5px;
+      font-size:1.1rem;
+      font-weight:bold;
+      transition:background .3s;
+    }
+    .cover-button:hover {background:#005bb5;}
+
+    @media (min-width:768px){
+      .cover-content h2{font-size:3.5rem;}
+      .cover-content p{font-size:1.5rem;}
+    }
+
+    /* FOOTER */
+    .footer {
+      background:#ededed;
+      padding:2rem 1.5rem;
+      color:#111;
+      border-top:1px solid #eaeaea;
+      font-size:0.95rem;
+    }
+    .footer-container {
+      display:flex;
+      flex-direction:column;
+      gap:2rem;
+      max-width:1000px;
+      margin:0 auto;
+      align-items:flex-start;
+    }
+    @media(min-width:768px){
+      .footer-container {
+        flex-direction:row;
+        justify-content:space-between;
+        align-items:center;
+      }
+    }
+    .footer ul {
+      list-style:none;
+      padding-left:0;
+      margin-left:0;
+    }
+    .footer-links {width:30%;}
+    .footer-company {width:30%;}
+    @media (max-width:768px){
+      .footer-links, .footer-company {width:80%;}
+    }
+    .footer a:hover {color:#0071e3;}
+    .btn-build {
+      display:inline-block;
+      background-color:#0071e3;
+      color:#fff;
+      font-weight:700;
+      padding:0.75rem 1.5rem;
+      border-radius:6px;
+      text-align:center;
+      transition:background-color .3s ease;
+    }
+    .btn-build:hover {background:#005bb5;}
+  </style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1189512042031215"
+     crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+<div class="ticker">
+Resources: <a href="/news">Small-business grants you can apply for this month </a>
+</div>
+
+<nav class="nav">
+  <div class="brand logo"><a href="/">Got-Wholesale.com</a></div>
+  <input type="checkbox" id="nav-toggle" hidden>
+  <label for="nav-toggle" class="toggle">&#9776;</label>
+  <ul>
+      <li><a href="/">Home</a></li>
+    <li><a href="/news">News</a></li>
+      <li><a href="/training">Training</a></li>
+    <li><a href="/resources">Resources</a></li>
+    <li><a href="/survey">Surveys & Polls</a></li>
+    <li><a href="/contact">Contact</a></li>
+    <li><a target="blank" style="text-decoration:none;"href="https://instagram.com/learnwholesale">
+      <img src="https://i.postimg.cc/1XmC1hGt/gw-academy-anaheim-digital-marketing-video-game-design-logo-24px-ig.png" alt="Instagram">
+    </a></li>
+  </ul>
+</nav>
+
+<section class="cover-section">
+  
+
+  <div class="cover-slide" style="background-image:url('https://images.pexels.com/photos/15204923/pexels-photo-15204923.jpeg');">
+    <div class="cover-content">
+      <h2>SoCal Commercial Signage Solutions</h2>
+      <p><b>#1 Custom Sign Installation in Orange County, CA</b><br> Full Service & Custom Business Design Resource</p>
+      <a href="/commercial-sign-near-me" class="cover-button">Learn More</a>
+    </div>
+  </div>
+  
+  <section style="padding:3rem 1.5rem; max-width:1050px; margin:auto;">
+
+  <!-- HEADER -->
+  <div style="text-align:center; margin-bottom:3rem;">
+    <h1 style="font-size:2.4rem; font-weight:800; color:#111;">SoCal Commercial Signage Solutions</h1>
+    <p style="font-size:1.25rem; color:#444; margin-top:1rem;">
+      #1 Custom Sign Installation in Orange County, CA
+    </p>
+    <p style="font-size:1.15rem; color:#666; margin-top:.5rem;">
+      Full Service • Custom Design • Maintenance & Same-Day Service
+    </p>
+  </div>
+
+
+  <!-- ABOUT BLOCK -->
+  <div style="background:white; padding:2rem; border-radius:10px; box-shadow:0 0 15px rgba(0,0,0,0.07); margin-bottom:3rem;">
+    <h3 style="font-size:1.8rem; font-weight:700; margin-bottom:1rem;">Meet Your SoCal Signage Partner</h3>
+
+    <p style="font-size:1.1rem; line-height:1.7; color:#333;">
+      I’m <b>Josh Cortes</b>, your dedicated representative for SoCal Commercial Signage Solutions.
+      I work directly with business owners, builders, property managers, and franchise operators
+      to deliver fast, reliable, and fully custom signage services across Orange County and
+      Southern California.
+    </p>
+
+    <p style="font-size:1.1rem; line-height:1.7; color:#333; margin-top:1rem;">
+      We provide full-service sign production—design, fabrication, installation, maintenance,
+      and same-day service requests. From storefront signs to interior graphics and large-scale
+      commercial installations, we ensure your business stands out with safe, professional,
+      and long-lasting signage.
+    </p>
+  </div>
+
+  <!-- CONTACT CARD -->
+  <div style="
+    background:#0071e3;
+    color:white;
+    padding:2rem;
+    border-radius:10px;
+    box-shadow:0 0 15px rgba(0,0,0,0.12);
+    margin-bottom:3rem;
+  ">
+    <h3 style="font-size:1.8rem; font-weight:700; margin-bottom:1rem;">Contact Josh</h3>
+
+    <p style="font-size:1.15rem; line-height:1.7;">
+      <b>Phone:</b> <a href="tel:6572396371" style="color:white; text-decoration:underline;">(657) 239-6371</a><br>
+      <b>Email:</b> <a href="mailto:ocjoshsales@gmail.com" style="color:white; text-decoration:underline;">ocjoshsales@gmail.com</a><br>
+    </p>
+
+    <p style="margin-top:1rem; font-size:1.1rem;">
+      Call, text, or email for quotes, design consultations, or same-day service requests.
+    </p>
+  </div>
+
+    
+    
+  <!-- HERO IMAGE -->
+  <div style="
+    background:url('https://images.unsplash.com/photo-1534237710431-e2fc698436d0?q=80&w=2070&auto=format');
+    background-size:cover;
+    background-position:center;
+    height:45vh;
+    border-radius:10px;
+    position:relative;
+    overflow:hidden;
+    margin-bottom:3rem;">
+    <div style="
+      position:absolute; inset:0;
+      background:rgba(0,0,0,0.55);
+      display:flex; align-items:center; justify-content:center;
+      text-align:center; padding:2rem;">
+      <div style="color:white;">
+        <h2 style="font-size:2rem; font-weight:700;">Custom Signs • Installation • Repairs</h2>
+        <p style="font-size:1.15rem; margin-top:1rem;">
+          From fabrication to same-day maintenance, we’ve got your business covered.
+        </p>
+      </div>
+    </div>
+  </div>
+    
+  <!-- SERVICE LIST -->
+  <div style="margin-bottom:3rem;">
+    <h3 style="font-size:1.8rem; font-weight:700; margin-bottom:1rem;">Signage Services We Offer</h3>
+
+    <ul style="font-size:1.1rem; line-height:1.9; color:#333; padding-left:1.2rem;">
+      <li>Custom Indoor & Outdoor Signs</li>
+      <li>Channel Letters & Dimensional Lettering</li>
+      <li>LED Signs & Lightbox Fabrication</li>
+      <li>Monument Signs & Pylon Signs</li>
+      <li>Window, Wall & Floor Graphics</li>
+      <li>Storefront Branding & Retail Sign Packages</li>
+      <li>Banners, Vinyl Wraps & Graphic Printing</li>
+      <li>Installation, Repair & Same-Day Maintenance</li>
+    </ul>
+  </div>
+
+  <!-- FULL SERVICE SECTION -->
+  <div style="background:white; padding:2rem; border-radius:10px; box-shadow:0 0 15px rgba(0,0,0,0.07); margin-bottom:3rem;">
+    <h3 style="font-size:1.8rem; font-weight:700; margin-bottom:1.5rem;">Your Full-Service Custom Sign Resource</h3>
+
+    <p style="font-size:1.1rem; line-height:1.75; color:#333;">
+      We are your complete source for custom signs, banners, graphics, and ongoing maintenance.
+      From initial design concepts to fabrication and professional installation, our team ensures
+      your business communicates clearly and powerfully to your customers.
+    </p>
+
+    <p style="font-size:1.1rem; line-height:1.75; color:#333; margin-top:1rem;">
+      Need a repair or last-minute installation? We also offer <b>same-day maintenance</b> and
+      rapid-response service to keep your business up and running with zero downtime.
+    </p>
+  </div>
+
+  <!-- CTA -->
+  <div style="text-align:center; margin-top:3rem;">
+    <a href="mailto:ocjoshsales@gmail.com"
+       style="background:#0071e3; color:white; padding:1rem 2rem; border-radius:6px;
+              font-weight:bold; font-size:1.2rem; display:inline-block;">
+      Schedule Service or Request a Quote
+    </a>
+  </div>
+
+</section>
+
+  
+  
+  
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h2 class="logo">Got-Wholesale.com</h2>
+      <p>Sales/Marketing Magazine & Training</p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Explore</h4><br>
+      <ul>
+        <li><a href="/news">News</a></li>
+        <li><a href="/training">Training</a></li>
+        <li><a href="/resources">Resources</a></li>
+        <li><a href="/survey">Surveys & Polls</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-company">
+      <h4>Training</h4><br>
+      <ul>
+        <li><a href="/online-class-ecommerce-design-digital-marketing-game-creation">Online Training</a></li>
+        <li><a href="/in-person-class-ecommerce-design-digital-marketing-game-creation">In Person Training</a></li>
+        <li><a href="/search-location">Search Training Near Me</a></li>
+        <li><a href="/faq">Training FAQ</a></li>
+        <li><a href="/terms">Terms & Conditions</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+      </ul> 
+    </div>
+
+    <div class="footer-info">
+      <h4>Contact</h4><br>
+      <p><a href="mailto:joshuacortesdesign@gmail.com">info@got-wholesale.com</a></p>
+      <p><a href="tel:6572396371">(657) 239-6371</a></p>
+      <br>
+      <p>5600 Argosy Ave Unit 400<br>Huntington Beach, CA</p>
+      <br>
+      <p>© <span id="year"></span> Got Wholesale. All rights reserved.</p>
+    </div>
+
+    <div class="footer-cta">
+      <a href="/resources" class="btn-build">Owner Resources</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
