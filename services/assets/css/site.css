@@ -117,7 +117,7 @@
     }
     .cover-button {
   display: block;
-      width:70%;
+      width:300px;
     text-align: center; /* optional, keeps button centered */
     background: #0071e3;
     color: white;
