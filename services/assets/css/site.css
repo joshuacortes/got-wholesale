@@ -82,7 +82,7 @@
     .ticker a:hover {text-decoration:underline;}
 
     /* COVER SECTION */
-    .cover-section {width:100%; overflow:hidden;}
+    .cover-section {width:70%; overflow:hidden;}
     .cover-slide {
       position:relative;
       height:45vh;
