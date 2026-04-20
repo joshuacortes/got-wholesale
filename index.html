@@ -109,7 +109,7 @@
     .ticker a:hover {text-decoration:underline;}
 
     /* COVER SECTION */
-    .cover-section {width:100%; overflow:hidden;}
+    .cover-section {width:70%; overflow:hidden;}
     .cover-slide {
       position:relative;
       height:45vh;
@@ -118,13 +118,14 @@
       display:flex;
       align-items:center;
       justify-content:center;
+      border-radius:16px;
     }
     .cover-slide::before {
       content:"";
       position:absolute;
       inset:0;
       background:rgba(0,0,0,0.7);
-      z-index:1;
+      z-index:1;border-radius:16px;
     }
     .cover-content {
       position:relative;
@@ -134,7 +135,7 @@
       padding:2rem;
     }
     .cover-content h2 {
-      font-size:2rem;
+      font-size:1rem;
       margin-bottom:1rem;
       font-weight:700;
     }
@@ -212,7 +213,7 @@
 <body>
 
 <div class="ticker">
-Resources: <a href="/news">Small-business grants you can apply for this month </a>
+ <a href="/news">Deal of the Week </a>
 </div>
 
 <nav class="nav">
@@ -233,10 +234,59 @@ Resources: <a href="/news">Small-business grants you can apply for this month </
 </nav>
 
   <br><br><br>
-  
+  <center>
+<div style="width:70%; text-align:left;">
+<h2>Find Wholesale Suppliers Near You</h2>
 
-<h1>Got Wholesale</h1>
-<p>Find Wholesale Suppliers Near You</p>
+<style>
+
+#listings {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.card h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  color: #222;
+}
+
+.card p {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #444;
+}
+
+.label {
+  font-weight: bold;
+  color: #111;
+}
+
+.link {
+  display: inline-block;
+  margin-top: 8px;
+  color: #0077ff;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+</style>
 
 <div id="listings"></div>
 
@@ -251,13 +301,25 @@ fetch(API)
     data.forEach(item => {
       html += `
         <div class="card">
-          <h3>${item["Business Name"]}</h3>
-          <p>${item["Description"]}</p>
-          <p><b>County:</b> ${item["County"]}</p>
-          <p><b>Category:</b> ${item["Category"]}</p>
-          <p>${item["Website / Instagram"] || ""}</p>
-          <p>${item["Phone"] || ""}</p>
-          <p>${item["Address"] || ""}</p>
+
+          <h3>${item["Business Name"] || ""}</h3>
+
+          <p>${item["Description"] || ""}</p>
+
+          <p><span class="label">County:</span> ${item["County"] || ""}</p>
+
+          <p><span class="label">Category:</span> ${item["Category"] || ""}</p>
+
+          <p><span class="label">Phone:</span> ${item["Phone"] || ""}</p>
+
+          <p><span class="label">Address:</span> ${item["Address"] || ""}</p>
+
+          ${
+            item["Website / Instagram"]
+              ? `<a class="link" href="${item["Website / Instagram"]}" target="_blank">Visit Profile</a>`
+              : ""
+          }
+
         </div>
       `;
     });
@@ -265,36 +327,25 @@ fetch(API)
     document.getElementById("listings").innerHTML = html;
   });
 </script>
+    </div></center>
+<br><br><br>
+  
+  
+  
   <br><br><br>
   
+  <center>
 <section class="cover-section">
   
 
 
-  <div class="cover-slide" style="background-image:url('https://images.unsplash.com/photo-1600267185296-f7dc4efe939c?auto=format&fit=crop&q=80&w=1170');">
-    <div class="cover-content">
-      <h2>2025 Small Business Survey</h2>
-      <p><b>$500 Amazon Giftcard Giveaway</b><br> 
-        November 19, 2025 - December 19, 2025</p>
-      <a href="/survey" class="cover-button">Take Survey</a>
-    </div>
-  </div>
-<br>
-  <div class="cover-slide" style="background-image:url('https://images.unsplash.com/photo-1629904853716-f0bc54eea481?auto=format&fit=crop&q=80&w=2070');">
-    <div class="cover-content">
-      <h2>CA Business News</h2>
-      <p><b>Insights That Move Markets</b><br> News for Entrepreneurs</p>
-      <a href="/news" class="cover-button">Latest News</a>
-    </div>
-  </div>
-  
+
   <br>
   <div class="cover-slide" style="background-image:url('https://images.unsplash.com/photo-1603712725038-e9334ae8f39f?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
     <div class="cover-content">
-      <h2>SoCal Commercial Cleaning</h2>
-      <p><b>Residential & Commercial Cleaning Services
-</b><br> Transform your expectations of home and commercial cleaning service</p>
-      <a href="/commercial-cleaning-services-near-me" class="cover-button">Learn More</a>
+      <h2>Clothing, Apparel & Fashion</h2>
+       <p><b>Clothing built for  </b><br> style and scale.</p>
+      <a href="/commercial-cleaning-services-near-me" class="cover-button">Browse Wholesale</a>
     </div>
   </div>
   
@@ -305,9 +356,9 @@ fetch(API)
   <br>
   <div class="cover-slide" style="background-image:url('https://images.unsplash.com/photo-1633533446213-a438ff5f0629?q=80&w=714');">
     <div class="cover-content">
-      <h2>Commercial Packaging Solutions</h2>
-      <p><b>From concept and sourcing to manufacturing, kitting, and fulfillment.</b><br> Your brand’s story in motion.</p>
-      <a href="/packaging-supplies-near-me" class="cover-button">Learn More</a>
+      <h2>Jewelry</h2>
+       <p><b>High-quality </b><br> jewelry suppliers.</p>
+      <a href="/packaging-supplies-near-me" class="cover-button">Browse Wholesale</a>
     </div>
   </div>
   
@@ -316,16 +367,16 @@ fetch(API)
   <br>
   <div class="cover-slide" style="background-image:url('https://images.pexels.com/photos/15204923/pexels-photo-15204923.jpeg');">
     <div class="cover-content">
-      <h2>SoCal Commercial Signage Solutions</h2>
-      <p><b>#1 Custom Sign Installation in Orange County, CA</b><br> Full Service & Custom Business Design Resource</p>
-      <a href="/commercial-sign-near-me" class="cover-button">Learn More</a>
+      <h2>General Wholesale</h2>
+      <p><b>All-in-one </b><br> wholesale suppliers.</p>
+      <a href="/commercial-sign-near-me" class="cover-button">Browse Wholesale</a>
     </div>
   </div>
   
+  </section>
+  </center>
   
-  
-  
-  
+  <br><br>
 
 <footer class="footer">
   <div class="footer-container">
@@ -357,20 +408,18 @@ fetch(API)
       </ul> 
     </div>
 
-    <div class="footer-info">
-      <h4>Contact</h4><br>
-      <p><a href="mailto:joshuacortesdesign@gmail.com">info@got-wholesale.com</a></p>
-      <p><a href="tel:6572396371">(657) 239-6371</a></p>
-      <br>
-      <p>5600 Argosy Ave Unit 400<br>Huntington Beach, CA</p>
-      <br>
-      <p>© <span id="year"></span> Got Wholesale. All rights reserved.</p>
+      <a href="/resources" class="btn-build">Business Owner Resources</a>
+    </div>
+      
     </div>
 
     <div class="footer-cta">
-      <a href="/resources" class="btn-build">Owner Resources</a>
-    </div>
+   
   </div>
+  <br><br>
+ <center>
+  <p>© <span id="year"></span> Got Wholesale. All rights reserved.</p>
+  </center>
 </footer>
 
 <script>
