@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Orange County Wholesale Directory | Got Wholesale</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Orange County Wholesale Suppliers</h1>
+<div id="listings"></div>
+
+<script>
+fetch('YOUR_GOOGLE_SCRIPT_URL')
+.then(r=>r.json())
+.then(data=>{
+
+const filtered = data.filter(item =>
+item.county &&
+item.county.toLowerCase() === 'orange county'
+);
+
+let html = '';
+
+filtered.forEach(item=>{
+html += `
+<div class="card">
+<h2>${item.name}</h2>
+<p>${item.city}</p>
+<p>${item.category}</p>
+<a href="${item.website}" target="_blank">Visit</a>
+</div>
+`;
+});
+
+document.getElementById('listings').innerHTML = html;
+
+});
+</script>
+
+</body>
+</html>
