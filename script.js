@@ -1,4 +1,4 @@
-fetch('data.json')
+fetch('https://script.google.com/macros/s/AKfycbyj4F0K7jPM5Z8pqm7ufWccBVSMS97YGGKnzo1vjtcHv_o_QUaj8uPck73fh1N6EGtF7Q/exec')
 .then(res => res.json())
 .then(data => {
 
