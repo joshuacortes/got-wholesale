@@ -1,1 +1,10 @@
-
+[
+{
+"name":"LA Fashion Wholesale",
+"city":"Los Angeles",
+"state":"CA",
+"category":"Clothing",
+"phone":"555-555-5555",
+"website":"https://example.com"
+}
+]
