@@ -2,39 +2,109 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Orange County Wholesale Directory | Got Wholesale</title>
+<meta name="description" content="Find wholesale suppliers and distributors in Orange County, California. Updated live listings from Got Wholesale.">
+
 <link rel="stylesheet" href="style.css">
+
+<style>
+.page-header{
+padding:40px 20px;
+text-align:center;
+background:#111;
+color:white;
+}
+
+.page-header h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:20px;
+}
+
+.card{
+background:#fff;
+border-radius:12px;
+padding:18px;
+margin-bottom:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+.card h2{
+margin:0 0 5px 0;
+}
+
+.tag{
+display:inline-block;
+padding:4px 10px;
+font-size:12px;
+background:#eee;
+border-radius:20px;
+margin-right:5px;
+}
+
+a.button{
+display:inline-block;
+margin-top:10px;
+padding:8px 14px;
+background:black;
+color:white;
+text-decoration:none;
+border-radius:6px;
+}
+</style>
+
 </head>
 <body>
 
-<h1>Orange County Wholesale Suppliers</h1>
-<div id="listings"></div>
+<div class="page-header">
+<h1>Orange County Wholesale</h1>
+<p>Live wholesale listings filtered by county</p>
+</div>
+
+<div class="container">
+<div id="listings">Loading listings...</div>
+</div>
 
 <script>
-fetch('YOUR_GOOGLE_SCRIPT_URL')
-.then(r=>r.json())
-.then(data=>{
+const COUNTY = "Orange County";
+
+fetch("YOUR_GOOGLE_SCRIPT_URL_HERE")
+.then(res => res.json())
+.then(data => {
 
 const filtered = data.filter(item =>
 item.county &&
-item.county.toLowerCase() === 'orange county'
+item.county.trim().toLowerCase() === COUNTY.toLowerCase()
 );
 
-let html = '';
+const container = document.getElementById("listings");
 
-filtered.forEach(item=>{
-html += `
+if(filtered.length === 0){
+container.innerHTML = "<p>No listings found yet in Orange County.</p>";
+return;
+}
+
+container.innerHTML = filtered.map(item => `
 <div class="card">
-<h2>${item.name}</h2>
-<p>${item.city}</p>
-<p>${item.category}</p>
-<a href="${item.website}" target="_blank">Visit</a>
-</div>
-`;
-});
+<h2>${item.name || "Unnamed Business"}</h2>
 
-document.getElementById('listings').innerHTML = html;
+<div>
+<span class="tag">${item.city || ""}</span>
+<span class="tag">${item.category || ""}</span>
+</div>
+
+<p>${item.description || ""}</p>
+
+${item.website ? `<a class="button" href="${item.website}" target="_blank">Visit Website</a>` : ""}
+</div>
+`).join("");
 
 });
 </script>
