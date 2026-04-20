@@ -234,18 +234,38 @@ Resources: <a href="/news">Small-business grants you can apply for this month </
 
   <br><br><br>
   
-<link rel="stylesheet" href="style.css">
 
 <h1>Got Wholesale</h1>
 <p>Find Wholesale Suppliers Near You</p>
 
-
-<input type="text" id="search" placeholder="Search wholesale shops...">
-
 <div id="listings"></div>
 
-<script src="script.js"></script>
+<script>
+const API = "https://script.google.com/macros/s/AKfycbzg6dCPxUoui5TuOqWrLtQ8q06-x_d78td2cZu0siO1XjZbtVSw_XA3BpBJ2_XTG8oCQA/exec";
 
+fetch(API)
+  .then(res => res.json())
+  .then(data => {
+    let html = "";
+
+    data.forEach(item => {
+      html += `
+        <div class="card">
+          <h3>${item["Business Name"]}</h3>
+          <p>${item["Description"]}</p>
+          <p><b>County:</b> ${item["County"]}</p>
+          <p><b>Category:</b> ${item["Category"]}</p>
+          <p>${item["Website / Instagram"] || ""}</p>
+          <p>${item["Phone"] || ""}</p>
+          <p>${item["Address"] || ""}</p>
+        </div>
+      `;
+    });
+
+    document.getElementById("listings").innerHTML = html;
+  });
+</script>
+  <br><br><br>
   
 <section class="cover-section">
   
