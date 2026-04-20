@@ -1,26 +1,101 @@
-<div id="listings"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Orange County Listings</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+  padding: 20px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 16px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.card h2 {
+  margin: 0 0 10px 0;
+  font-size: 20px;
+}
+
+.card p {
+  margin: 5px 0;
+  line-height: 1.4;
+}
+
+a {
+  color: blue;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Orange County Wholesale Listings</h1>
+
+<div id="listings">Loading...</div>
 
 <script>
 const API = "https://script.google.com/macros/s/AKfycbzg6dCPxUoui5TuOqWrLtQ8q06-x_d78td2cZu0siO1XjZbtVSw_XA3BpBJ2_XTG8oCQA/exec";
-const countyFilter = "Orange County";
 
 fetch(API)
   .then(res => res.json())
   .then(data => {
+
+    const countyFilter = "orange county";
+
+    const filtered = data.filter(item =>
+      (item["County"] || "").trim().toLowerCase() === countyFilter
+    );
+
     let html = "";
 
-    const filtered = data.filter(item => item["County"] === countyFilter);
+    if (filtered.length === 0) {
+      document.getElementById("listings").innerHTML = "No listings found.";
+      return;
+    }
 
     filtered.forEach(item => {
       html += `
         <div class="card">
-          <h3>${item["Business Name"]}</h3>
-          <p>${item["Description"]}</p>
-          <p>${item["Category"]}</p>
+
+          <h2>${item["Business Name"] || "No Business Name"}</h2>
+
+          <p>${item["Description"] || ""}</p>
+
+          <p><b>County:</b> ${item["County"] || ""}</p>
+
+          <p><b>Category:</b> ${item["Category"] || ""}</p>
+
+          <p><b>Phone:</b> ${item["Phone"] || ""}</p>
+
+          <p><b>Address:</b> ${item["Address"] || ""}</p>
+
+          ${
+            item["Website / Instagram"]
+              ? `<p><a href="${item["Website / Instagram"]}" target="_blank">Visit Website / Instagram</a></p>`
+              : ""
+          }
+
         </div>
       `;
     });
 
     document.getElementById("listings").innerHTML = html;
+  })
+  .catch(err => {
+    document.getElementById("listings").innerHTML =
+      "Error loading listings.";
+    console.error(err);
   });
 </script>
+
+</body>
+</html>
