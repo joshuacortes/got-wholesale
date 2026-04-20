@@ -67,8 +67,9 @@
       transition:color .3s ease;
     }
     .nav ul li a:hover {color:#0071e3;}
-
+    
     @media (max-width:768px){
+    
       .toggle {
         display:block;
         background:none;
@@ -135,12 +136,12 @@
       padding:2rem;
     }
     .cover-content h2 {
-      font-size:1rem;
+      font-size:1.8rem;
       margin-bottom:1rem;
       font-weight:700;
     }
     .cover-content p {
-      font-size:1.2rem;
+      font-size:1.3em;
       margin-bottom:2rem;
     }
     .cover-button {
@@ -213,7 +214,7 @@
 <body>
 
 <div class="ticker">
- <a href="/news">Deal of the Week </a>
+ <a href="/news">Wholesale Deal of the Week </a>
 </div>
 
 <nav class="nav">
@@ -222,11 +223,8 @@
   <label for="nav-toggle" class="toggle">&#9776;</label>
   <ul>
       <li><a href="/">Home</a></li>
-    <li><a href="/news">News</a></li>
-      <li><a href="/training">Training</a></li>
-    <li><a href="/resources">Resources</a></li>
-    <li><a href="/survey">Surveys & Polls</a></li>
-    <li><a href="/contact">Contact</a></li>
+    <li><a href="/search/">Directory</a></li>
+    <li><a href="/submit">Submit Business</a></li>
     <li><a target="blank" style="text-decoration:none;"href="https://instagram.com/learnwholesale">
       <img src="https://i.postimg.cc/1XmC1hGt/gw-academy-anaheim-digital-marketing-video-game-design-logo-24px-ig.png" alt="Instagram">
     </a></li>
@@ -235,7 +233,7 @@
 
   <br><br><br>
   <center>
-<div style="width:70%; text-align:left;">
+    <div style="text-align:left; width:70%;">
 <h2>Find Wholesale Suppliers Near You</h2>
 
 <style>
@@ -326,13 +324,11 @@ fetch(API)
 
     document.getElementById("listings").innerHTML = html;
   });
-</script>
+</script> 
     </div></center>
 <br><br><br>
   
-  
-  
-  <br><br><br>
+  </div>
   
   <center>
 <section class="cover-section">
@@ -344,7 +340,7 @@ fetch(API)
   <div class="cover-slide" style="background-image:url('https://images.unsplash.com/photo-1603712725038-e9334ae8f39f?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
     <div class="cover-content">
       <h2>Clothing, Apparel & Fashion</h2>
-       <p><b>Clothing built for  </b><br> style and scale.</p>
+       <p>Clothing designed for <b>style and scale.</b> </p>
       <a href="/commercial-cleaning-services-near-me" class="cover-button">Browse Wholesale</a>
     </div>
   </div>
@@ -357,7 +353,7 @@ fetch(API)
   <div class="cover-slide" style="background-image:url('https://images.unsplash.com/photo-1633533446213-a438ff5f0629?q=80&w=714');">
     <div class="cover-content">
       <h2>Jewelry</h2>
-       <p><b>High-quality </b><br> jewelry suppliers.</p>
+       <p><b>High-quality </b> jewelry suppliers.</p>
       <a href="/packaging-supplies-near-me" class="cover-button">Browse Wholesale</a>
     </div>
   </div>
@@ -368,7 +364,7 @@ fetch(API)
   <div class="cover-slide" style="background-image:url('https://images.pexels.com/photos/15204923/pexels-photo-15204923.jpeg');">
     <div class="cover-content">
       <h2>General Wholesale</h2>
-      <p><b>All-in-one </b><br> wholesale suppliers.</p>
+      <p><b>All-in-one </b> wholesale suppliers.</p>
       <a href="/commercial-sign-near-me" class="cover-button">Browse Wholesale</a>
     </div>
   </div>
@@ -388,6 +384,14 @@ fetch(API)
     <div class="footer-links">
       <h4>Explore</h4><br>
       <ul>
+        
+        <li><a href="/search/clothing">Clothing, Apparel & Fashion</a></li>
+        <li><a href="/search/jewelry">Jewelry</a></li>
+        <li><a href="/search/accessories">Accessories</a></li>
+        <li><a href="/search/produce">Produce</a></li>
+        <li><a href="/search/general">General Wholesale</a></li>
+        <li><a href="/search/vape">Vape</a></li>
+        <br>
         <li><a href="/news">News</a></li>
         <li><a href="/training">Training</a></li>
         <li><a href="/resources">Resources</a></li>
