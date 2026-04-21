@@ -362,26 +362,14 @@ function render(data){
   data.forEach(item => {
     html += `
       <div class="card">
-
-        <h2>${item["Business Name"] || ""}</h2>
-
-        <p>${item["Description"] || ""}</p>
-
-        <p><b>County:</b> ${item["County"] || ""}</p>
-
-        <p><b>Category:</b> ${item["Category"] || ""}</p>
-
-        <p><b>Phone:</b> ${item["Phone"] || ""}</p>
-
-        <p><b>Address:</b> ${item["Address"] || ""}</p>
-
-        ${
-          item["Website / Instagram"]
-            ? `<p><a href="${item["Website / Instagram"]}" target="_blank" rel="noopener noreferrer">Visit Website / Instagram</a></p>`
-            : ""
-        }
-
-      </div>
+          <h3>${item["Business Name"] || ""}</h3>
+          <p>${item["Description"] || ""}</p><br>
+          <p><b>Location:</b> ${item["County"] || ""}</p>
+          <p><b>Category:</b> ${item["Category"] || ""}</p>
+          <p><b>Phone:</b> ${item["Phone"] || ""}</p>
+          <p><b>Address:</b> ${item["Address"] || ""}</p>
+          <p><b>Website/Social Media:</b> ${item["Website"] || ""}</p>
+        </div>
     `;
   });
 
