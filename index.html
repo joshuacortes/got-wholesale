@@ -366,13 +366,14 @@ function render(data){
         html += `
         <div class="card">
           <h3>${item["Business Name"] || ""}</h3>
-          <p>${item["Description"] || ""}</p>
-          <p><b>County:</b> ${item["County"] || ""}</p>
+          <p>${item["Description"] || ""}</p><br>
+          <p><b>Location:</b> ${item["County"] || ""}</p>
           <p><b>Category:</b> ${item["Category"] || ""}</p>
-          <p>${item["Phone"] || ""}</p>
-          <p>${item["Address"] || ""}</p>
+          <p><b>Phone:</b> ${item["Phone"] || ""}</p>
+          <p><b>Address:</b> ${item["Address"] || ""}</p>
+          <p><b>Website/Social Media:</b> ${item["Website"] || ""}</p>
         </div>
-        `;
+        `; 
     });
 
     document.getElementById("listings").innerHTML = html;
