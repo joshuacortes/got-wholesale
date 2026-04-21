@@ -1,101 +1,150 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Orange County Listings</title>
+<h1>Orange County Wholesale Listings</h1>
 
 <style>
-body {
-  font-family: Arial, sans-serif;
-  background: #f7f7f7;
-  padding: 20px;
+.filters{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:20px 0;
 }
 
-.card {
-  background: #fff;
-  border: 1px solid #ddd;
-  padding: 16px;
-  margin-bottom: 15px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+.filters input,
+.filters select{
+  padding:10px;
+  border:1px solid #ccc;
+  border-radius:8px;
+  font-size:14px;
 }
 
-.card h2 {
-  margin: 0 0 10px 0;
-  font-size: 20px;
+#listings{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:15px;
 }
 
-.card p {
-  margin: 5px 0;
-  line-height: 1.4;
+.card{
+  background:#fff;
+  border:1px solid #ddd;
+  border-radius:12px;
+  padding:15px;
+  box-shadow:0 2px 8px rgba(0,0,0,.05);
 }
 
-a {
-  color: blue;
+.card h2{
+  margin:0 0 8px;
+  font-size:20px;
+}
+
+.card p{
+  margin:5px 0;
 }
 </style>
-</head>
 
-<body>
+<div class="filters">
+  <input type="text" id="search" placeholder="Search Orange County suppliers...">
 
-<h1>Orange County Wholesale Listings</h1>
+  <select id="category">
+    <option value="">All Categories</option>
+  </select>
+</div>
 
 <div id="listings">Loading...</div>
 
 <script>
 const API = "https://script.google.com/macros/s/AKfycbzg6dCPxUoui5TuOqWrLtQ8q06-x_d78td2cZu0siO1XjZbtVSw_XA3BpBJ2_XTG8oCQA/exec";
 
+let masterData = [];
+
 fetch(API)
-  .then(res => res.json())
-  .then(data => {
+.then(res => res.json())
+.then(data => {
 
-    const countyFilter = "orange county";
+  masterData = data.filter(item =>
+    (item["County"] || "").trim().toLowerCase() === "orange county"
+  );
 
-    const filtered = data.filter(item =>
-      (item["County"] || "").trim().toLowerCase() === countyFilter
-    );
+  loadCategories(masterData);
+  render(masterData);
 
-    let html = "";
+  document.getElementById("search").addEventListener("input", filterData);
+  document.getElementById("category").addEventListener("change", filterData);
+})
+.catch(err => {
+  document.getElementById("listings").innerHTML = "Error loading listings.";
+  console.error(err);
+});
 
-    if (filtered.length === 0) {
-      document.getElementById("listings").innerHTML = "No listings found.";
-      return;
-    }
+function loadCategories(data){
+  const categories = [...new Set(
+    data.map(item => item["Category"]).filter(Boolean)
+  )];
 
-    filtered.forEach(item => {
-      html += `
-        <div class="card">
+  let html = '<option value="">All Categories</option>';
 
-          <h2>${item["Business Name"] || "No Business Name"}</h2>
-
-          <p>${item["Description"] || ""}</p>
-
-          <p><b>County:</b> ${item["County"] || ""}</p>
-
-          <p><b>Category:</b> ${item["Category"] || ""}</p>
-
-          <p><b>Phone:</b> ${item["Phone"] || ""}</p>
-
-          <p><b>Address:</b> ${item["Address"] || ""}</p>
-
-          ${
-            item["Website / Instagram"]
-              ? `<p><a href="${item["Website / Instagram"]}" target="_blank">Visit Website / Instagram</a></p>`
-              : ""
-          }
-
-        </div>
-      `;
-    });
-
-    document.getElementById("listings").innerHTML = html;
-  })
-  .catch(err => {
-    document.getElementById("listings").innerHTML =
-      "Error loading listings.";
-    console.error(err);
+  categories.sort().forEach(cat => {
+    html += `<option value="${cat}">${cat}</option>`;
   });
-</script>
 
-</body>
-</html>
+  document.getElementById("category").innerHTML = html;
+}
+
+function filterData(){
+  const search = document.getElementById("search").value.toLowerCase();
+  const category = document.getElementById("category").value;
+
+  const filtered = masterData.filter(item => {
+
+    const text = (
+      (item["Business Name"] || "") + " " +
+      (item["Description"] || "") + " " +
+      (item["Phone"] || "") + " " +
+      (item["Address"] || "") + " " +
+      (item["Category"] || "")
+    ).toLowerCase();
+
+    const matchSearch = text.includes(search);
+    const matchCategory = category === "" || item["Category"] === category;
+
+    return matchSearch && matchCategory;
+  });
+
+  render(filtered);
+}
+
+function render(data){
+
+  let html = "";
+
+  if(data.length === 0){
+    html = "<p>No Orange County listings found.</p>";
+  }
+
+  data.forEach(item => {
+    html += `
+      <div class="card">
+
+        <h2>${item["Business Name"] || ""}</h2>
+
+        <p>${item["Description"] || ""}</p>
+
+        <p><b>County:</b> ${item["County"] || ""}</p>
+
+        <p><b>Category:</b> ${item["Category"] || ""}</p>
+
+        <p><b>Phone:</b> ${item["Phone"] || ""}</p>
+
+        <p><b>Address:</b> ${item["Address"] || ""}</p>
+
+        ${
+          item["Website / Instagram"]
+            ? `<p><a href="${item["Website / Instagram"]}" target="_blank" rel="noopener noreferrer">Visit Website / Instagram</a></p>`
+            : ""
+        }
+
+      </div>
+    `;
+  });
+
+  document.getElementById("listings").innerHTML = html;
+}
+</script>
