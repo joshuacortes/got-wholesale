@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>General Wholesale Listings
+ | Got-Wholesale.com</title>
+  <meta name="description" content="Got-Wholesale.com - Browse General Wholesale listings.">
+  <link rel="icon" href="https://i.postimg.cc/qvkq3mkM/gw-academy-online-anaheim-digital-marketing-web-design-class-favicon-3.png" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17084906274"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17084906274');
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZG635NETPK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZG635NETPK');
+  </script>
+
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      background:#f9f9f9; color:#111; overflow-x:hidden; max-width:100vw;
+    }
+    a {color:inherit; text-decoration:none;}
+
+    /* TEXT LOGO */
+    .logo {
+      font-size:1.055em;
+      font-weight:bold;
+      color:#111;
+      font-style:italic;
+      font-family:verdana;
+      letter-spacing:-2px;
+    }
+
+    /* NAVIGATION (thicker) */
+    .nav {
+      background:#fff;
+      padding:1rem 1.5rem; /* ← thicker like second template */
+      position:sticky;
+      top:0;
+      z-index:999;
+      box-shadow:0 3px 0 0 #0071e3,0 5px 0 0 #111;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .toggle {display:none;}
+    .nav ul {
+      list-style:none;
+      display:flex;
+      gap:2rem;
+    }
+    .nav ul li a {
+      font-size:1.1rem;
+      font-weight:600;
+      transition:color .3s ease;
+    }
+    .nav ul li a:hover {color:#0071e3;}
+    
+    @media (max-width:768px){
+    
+      .toggle {
+        display:block;
+        background:none;
+        border:none;
+        font-size:1.5rem;
+        position:absolute;
+        right:1.5rem;
+        top:.75rem;
+        cursor:pointer;
+      }
+      .nav ul {
+        display:none;
+        flex-direction:column;
+        background:#fff;
+        width:100%;
+        position:absolute;
+        left:0;
+        top:100%;
+        padding:1rem;
+        border-top:1px solid #eee;
+      }
+      #nav-toggle:checked ~ ul {display:flex;}
+    }
+
+    /* Ticker Bar */
+    .ticker {
+      background:#f4f4f4;
+      color:#111;
+      font-size:1.05rem;
+      padding:0.6rem 1.5rem;
+      text-align:center;
+      position:sticky;
+      top:0;
+      z-index:100;
+      border-bottom:1px solid #ddd;
+    }
+    .ticker a {color:#0071e3; font-weight:500;}
+    .ticker a:hover {text-decoration:underline;}
+
+    /* COVER SECTION */
+    .cover-section {width:100%; overflow:hidden;}
+    .cover-slide {
+      position:relative;
+      height:45vh;
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:16px;
+    }
+    .cover-slide::before {
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,0.7);
+      z-index:1;border-radius:16px;
+    }
+    .cover-content {
+      position:relative;
+      z-index:2;
+      color:#fff;
+      text-align:center;
+      padding:2rem;
+    }
+    .cover-content h2 {
+      font-size:1.8rem;
+      margin-bottom:1rem;
+      font-weight:700;
+    }
+    .cover-content p {
+      font-size:1.3em;
+      margin-bottom:2rem;
+    }
+    .cover-button {
+      background:#0071e3;
+      color:white;
+      padding:0.75rem 1.5rem;
+      border-radius:5px;
+      font-size:1.1rem;
+      font-weight:bold;
+      transition:background .3s;
+    }
+    .cover-button:hover {background:#005bb5;}
+
+    @media (min-width:768px){
+      .cover-content h2{font-size:3.5rem;}
+      .cover-content p{font-size:1.5rem;}
+    }
+
+    /* FOOTER */
+    .footer {
+      background:#ededed;
+      padding:2rem 1.5rem;
+      color:#111;
+      border-top:1px solid #eaeaea;
+      font-size:0.95rem;
+    }
+    .footer-container {
+      display:flex;
+      flex-direction:column;
+      gap:2rem;
+      max-width:1000px;
+      margin:0 auto;
+      align-items:flex-start;
+    }
+    @media(min-width:768px){
+      .footer-container {
+        flex-direction:row;
+        justify-content:space-between;
+        align-items:center;
+      }
+    }
+    .footer ul {
+      list-style:none;
+      padding-left:0;
+      margin-left:0;
+    }
+    .footer-links {width:30%;}
+    .footer-company {width:30%;}
+    @media (max-width:768px){
+      .footer-links, .footer-company {width:80%;}
+    }
+    .footer a:hover {color:#0071e3;}
+    .btn-build {
+      display:inline-block;
+      background-color:#0071e3;
+      color:#fff;
+      font-weight:700;
+      padding:0.75rem 1.5rem;
+      border-radius:6px;
+      text-align:center;
+      transition:background-color .3s ease;
+    }
+    .btn-build:hover {background:#005bb5;}
+  </style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1189512042031215"
+     crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+<div class="ticker"> 
+ <a href="/search/">View All Suppliers ➤</a>
+</div>
+
+<nav class="nav">
+  <div class="brand logo"><a href="/">Got-Wholesale.com</a></div>
+  <input type="checkbox" id="nav-toggle" hidden>
+  <label for="nav-toggle" class="toggle">&#9776;</label>
+  <ul>
+      <li><a href="/">Home</a></li>
+    <li><a href="/search/">Directory</a></li>
+    <li><a href="/submit">Submit Business</a></li>
+    <li><a target="blank" style="text-decoration:none;"href="https://instagram.com/learnwholesale">
+      <img src="https://i.postimg.cc/1XmC1hGt/gw-academy-anaheim-digital-marketing-video-game-design-logo-24px-ig.png" alt="Instagram">
+    </a></li>
+  </ul>
+</nav>
+
+  <br><br><br>
+  <style>
+    .wowbox{
+      text-align:left; width:60%;
+    }
+    @media screen and (max-width: 800px) {
+      
+      .wowbox{
+        width:98%;
+      }
+    }
+      
+  </style>
+  <center>
+    <div class="wowbox">
+
+      
+<h1>General Wholesale Suppliers</h1>
+
+<style>
+.filters{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:20px 0;
+}
+
+.filters input,
+.filters select{
+  padding:10px;
+  border:1px solid #ccc;
+  border-radius:8px;
+  font-size:14px;
+}
+
+#listings{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:15px;
+}
+
+.card{
+  background:#fff;
+  border:1px solid #ddd;
+  border-radius:12px;
+  padding:15px;
+  box-shadow:0 2px 8px rgba(0,0,0,.05);
+}
+
+.card h2{
+  margin:0 0 8px;
+  font-size:20px;
+}
+
+.card p{
+  margin:5px 0;
+}
+</style>
+
+<div class="filters">
+  <input type="text" id="search" placeholder="Search general wholesale suppliers...">
+
+  <select id="county">
+    <option value="">All Counties</option>
+    <option>Orange County</option>
+    <option>Los Angeles</option>
+    <option>Riverside</option>
+    <option>San Bernardino</option>
+  </select>
+</div>
+
+<div id="listings">Loading...</div>
+
+<script>
+const API = "https://script.google.com/macros/s/AKfycbzg6dCPxUoui5TuOqWrLtQ8q06-x_d78td2cZu0siO1XjZbtVSw_XA3BpBJ2_XTG8oCQA/exec";
+
+let masterData = [];
+
+fetch(API)
+.then(res => res.json())
+.then(data => {
+
+  masterData = data.filter(item =>
+    (item["Category"] || "").trim().toLowerCase() === "general wholesale"
+  );
+
+  render(masterData);
+
+  document.getElementById("search").addEventListener("input", filterData);
+  document.getElementById("county").addEventListener("change", filterData);
+})
+.catch(err => {
+  document.getElementById("listings").innerHTML = "Error loading listings.";
+  console.error(err);
+});
+
+function filterData(){
+  const search = document.getElementById("search").value.toLowerCase();
+  const county = document.getElementById("county").value;
+
+  const filtered = masterData.filter(item => {
+
+    const text = (
+      (item["Business Name"] || "") + " " +
+      (item["Description"] || "") + " " +
+      (item["Phone"] || "") + " " +
+      (item["Address"] || "") + " " +
+      (item["Category"] || "")
+    ).toLowerCase();
+
+    const matchSearch = text.includes(search);
+    const matchCounty = county === "" || item["County"] === county;
+
+    return matchSearch && matchCounty;
+  });
+
+  render(filtered);
+}
+
+function render(data){
+
+  let html = "";
+
+  if(data.length === 0){
+    html = "<p>No general wholesale listings found.</p>";
+  }
+
+  data.forEach(item => {
+    html += `
+      <div class="card">
+
+        <h2>${item["Business Name"] || ""}</h2>
+
+        <p>${item["Description"] || ""}</p>
+
+        <p><b>County:</b> ${item["County"] || ""}</p>
+
+        <p><b>Category:</b> ${item["Category"] || ""}</p>
+
+        <p><b>Phone:</b> ${item["Phone"] || ""}</p>
+
+        <p><b>Address:</b> ${item["Address"] || ""}</p>
+
+        ${
+          item["Website / Instagram"]
+            ? `<p><a href="${item["Website / Instagram"]}" target="_blank" rel="noopener noreferrer">Visit Website / Instagram</a></p>`
+            : ""
+        }
+
+      </div>
+    `;
+  });
+
+  document.getElementById("listings").innerHTML = html;
+}
+</script>
+      
+      
+    </div></center>
+<br><br><br>
+  
+  </div>
+  
+  <center>
+    
+    <div class="wowbox">
+<section class="cover-section">
+  
+
+
+
+  <br>
+  <div class="cover-slide" style="background-image:url('https://images.unsplash.com/photo-1603712725038-e9334ae8f39f?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+    <div class="cover-content">
+      <h2>Clothing, Apparel & Fashion</h2>
+       <p>Clothing designed for <b>style and scale.</b> </p>
+      <a href="/commercial-cleaning-services-near-me" class="cover-button">Browse Wholesale</a>
+    </div>
+  </div>
+  
+  
+  
+  
+  
+  <br>
+  <div class="cover-slide" style="background-image:url('https://images.unsplash.com/photo-1633533446213-a438ff5f0629?q=80&w=714');">
+    <div class="cover-content">
+      <h2>Jewelry</h2>
+       <p><b>High-quality </b> jewelry suppliers.</p>
+      <a href="/packaging-supplies-near-me" class="cover-button">Browse Wholesale</a>
+    </div>
+  </div>
+  
+  
+  
+  <br>
+  <div class="cover-slide" style="background-image:url('https://images.pexels.com/photos/15204923/pexels-photo-15204923.jpeg');">
+    <div class="cover-content">
+      <h2>General Wholesale</h2>
+      <p><b>All-in-one </b> wholesale suppliers.</p>
+      <a href="/commercial-sign-near-me" class="cover-button">Browse Wholesale</a>
+    </div>
+  </div>
+  </div>
+  </section>
+  </center>
+  
+  <br><br>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h2 class="logo">Got-Wholesale.com</h2>
+      <p>Sales/Marketing Magazine & Training</p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Explore</h4><br>
+      <ul>
+        
+        <li><a href="/search/clothing">Clothing, Apparel & Fashion</a></li>
+        <li><a href="/search/jewelry">Jewelry</a></li>
+        <li><a href="/search/accessories">Accessories</a></li>
+        <li><a href="/search/produce">Produce</a></li>
+        <li><a href="/search/general">General Wholesale</a></li>
+        <li><a href="/search/vape">Vape</a></li>
+        <br>
+        <li><a href="/news">News</a></li>
+        <li><a href="/training">Training</a></li>
+        <li><a href="/resources">Resources</a></li>
+        <li><a href="/survey">Surveys & Polls</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-company">
+      <h4>Training</h4><br>
+      <ul>
+        <li><a href="/online-class-ecommerce-design-digital-marketing-game-creation">Online Training</a></li>
+        <li><a href="/in-person-class-ecommerce-design-digital-marketing-game-creation">In Person Training</a></li>
+        <li><a href="/search-location">Search Training Near Me</a></li>
+        <li><a href="/faq">Training FAQ</a></li>
+        <li><a href="/terms">Terms & Conditions</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+      </ul> 
+    </div>
+
+      <a href="/resources" class="btn-build">Business Owner Resources</a>
+    </div>
+      
+    </div>
+
+    <div class="footer-cta">
+   
+  </div>
+  <br><br>
+ <center>
+  <p>© <span id="year"></span> Got Wholesale. All rights reserved.</p>
+  </center>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
