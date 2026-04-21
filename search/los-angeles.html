@@ -1,49 +1,150 @@
 <h1>Los Angeles Wholesale Listings</h1>
 
+<style>
+.filters{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:20px 0;
+}
+
+.filters input,
+.filters select{
+  padding:10px;
+  border:1px solid #ccc;
+  border-radius:8px;
+  font-size:14px;
+}
+
+#listings{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:15px;
+}
+
+.card{
+  background:#fff;
+  border:1px solid #ddd;
+  border-radius:12px;
+  padding:15px;
+  box-shadow:0 2px 8px rgba(0,0,0,.05);
+}
+
+.card h2{
+  margin:0 0 8px;
+  font-size:20px;
+}
+
+.card p{
+  margin:5px 0;
+}
+</style>
+
+<div class="filters">
+  <input type="text" id="search" placeholder="Search Los Angeles suppliers...">
+
+  <select id="category">
+    <option value="">All Categories</option>
+  </select>
+</div>
+
 <div id="listings">Loading...</div>
 
 <script>
 const API = "https://script.google.com/macros/s/AKfycbzg6dCPxUoui5TuOqWrLtQ8q06-x_d78td2cZu0siO1XjZbtVSw_XA3BpBJ2_XTG8oCQA/exec";
 
+let masterData = [];
+
 fetch(API)
-  .then(res => res.json())
-  .then(data => {
+.then(res => res.json())
+.then(data => {
 
-    const countyFilter = "los angeles";
+  masterData = data.filter(item =>
+    (item["County"] || "").trim().toLowerCase() === "los angeles"
+  );
 
-    const filtered = data.filter(item =>
-      (item["County"] || "").trim().toLowerCase() === countyFilter
-    );
+  loadCategories(masterData);
+  render(masterData);
 
-    let html = "";
+  document.getElementById("search").addEventListener("input", filterData);
+  document.getElementById("category").addEventListener("change", filterData);
+})
+.catch(err => {
+  document.getElementById("listings").innerHTML = "Error loading listings.";
+  console.error(err);
+});
 
-    if (filtered.length === 0) {
-      document.getElementById("listings").innerHTML = "No listings found.";
-      return;
-    }
+function loadCategories(data){
+  const categories = [...new Set(
+    data.map(item => item["Category"]).filter(Boolean)
+  )];
 
-    filtered.forEach(item => {
-      html += `
-        <div class="card">
-          <h2>${item["Business Name"] || ""}</h2>
-          <p>${item["Description"] || ""}</p>
-          <p><b>County:</b> ${item["County"] || ""}</p>
-          <p><b>Category:</b> ${item["Category"] || ""}</p>
-          <p><b>Phone:</b> ${item["Phone"] || ""}</p>
-          <p><b>Address:</b> ${item["Address"] || ""}</p>
-          ${
-            item["Website / Instagram"]
-              ? `<p><a href="${item["Website / Instagram"]}" target="_blank" rel="noopener noreferrer">Visit Website / Instagram</a></p>`
-              : ""
-          }
-        </div>
-      `;
-    });
+  let html = '<option value="">All Categories</option>';
 
-    document.getElementById("listings").innerHTML = html;
-  })
-  .catch(err => {
-    document.getElementById("listings").innerHTML = "Error loading listings.";
-    console.error(err);
+  categories.sort().forEach(cat => {
+    html += `<option value="${cat}">${cat}</option>`;
   });
+
+  document.getElementById("category").innerHTML = html;
+}
+
+function filterData(){
+  const search = document.getElementById("search").value.toLowerCase();
+  const category = document.getElementById("category").value;
+
+  const filtered = masterData.filter(item => {
+
+    const text = (
+      (item["Business Name"] || "") + " " +
+      (item["Description"] || "") + " " +
+      (item["Phone"] || "") + " " +
+      (item["Address"] || "") + " " +
+      (item["Category"] || "")
+    ).toLowerCase();
+
+    const matchSearch = text.includes(search);
+    const matchCategory = category === "" || item["Category"] === category;
+
+    return matchSearch && matchCategory;
+  });
+
+  render(filtered);
+}
+
+function render(data){
+
+  let html = "";
+
+  if(data.length === 0){
+    html = "<p>No Los Angeles listings found.</p>";
+  }
+
+  data.forEach(item => {
+    html += `
+      <div class="card">
+
+        <h2>${item["Business Name"] || ""}</h2>
+
+        <p>${item["Description"] || ""}</p>
+
+        <p><b>County:</b> ${item["County"] || ""}</p>
+
+        <p><b>Category:</b> ${item["Category"] || ""}</p>
+
+        <p><b>Phone:</b> ${item["Phone"] || ""}</p>
+
+        <p><b>Address:</b> ${item["Address"] || ""}</p>
+
+        ${
+          item["Website / Instagram"]
+            ? `<p><a href="${item["Website / Instagram"]}" target="_blank" rel="noopener noreferrer">Visit Website / Instagram</a></p>`
+            : ""
+        }
+
+      </div>
+    `;
+  });
+
+  document.getElementById("listings").innerHTML = html;
+}
 </script>
