@@ -110,7 +110,7 @@
     .ticker a:hover {text-decoration:underline;}
 
     /* COVER SECTION */
-    .cover-section {width:70%; overflow:hidden;}
+    .cover-section {width:100%; overflow:hidden;}
     .cover-slide {
       position:relative;
       height:45vh;
@@ -213,8 +213,8 @@
 
 <body>
 
-<div class="ticker">
- <a href="/submit">Submit Your Business </a>
+<div class="ticker"> 
+ <a href="/search/">View All Suppliers ➤</a>
 </div>
 
 <nav class="nav">
@@ -231,28 +231,97 @@
   </ul>
 </nav>
 
-  <br><br><br>
-  <center>
-    <div style="text-align:left; width:70%;">
-<h2>Find Wholesale Suppliers Near You</h2><br>
-    <a href="/search/clothing">Clothing, Apparel & Fashion</a><br>
-      <a href="/search/beauty-products">Beauty Products</a><br>
-      <a href="/search/jewelry">Jewelry</a><br>
-      <a href="/search/footwear">Footwear</a><br>
-      <a href="/search/produce">Produce</a><br>
-      <a href="/search/accessories">Accessories</a><br>
-      <a href="/search/general-wholesale">General Wholesale</a>
-      <br><br><br>
-      <h2>Search by County</h2><br>
-      
-      <a href="/search/orange-county">Orange County</a><br>
-      <a href="/search/los-angeles">Los Angeles</a><br>
-      <a href="/search/riverside">Riverside</a>
-      
-  
-    </div></center>
-<br><br><br>
   <style>
+    .wowbox{
+      text-align:left; width:60%;
+    }
+    @media screen and (max-width: 800px) {
+      
+      .wowbox{
+        width:98%;
+      }
+    }
+      
+  </style>
+  <center>
+    <div class="wowbox">
+
+      <style>
+.menu-wrapper{
+  display:flex;
+  justify-content:center;
+  padding:40px 20px;
+}
+
+.menu-container{
+  width:100%;
+  max-width:100%;
+}
+
+h2{
+  margin:30px 0 15px;
+  font-size:22px;
+  text-align:left;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+  gap:12px;
+}
+
+.menu-card{
+  display:block;
+  padding:15px;
+  background:#fff;
+  border:1px solid #e5e5e5;
+  border-radius:12px;
+  text-decoration:none;
+  color:#222;
+  font-weight:600;
+  text-align:center;
+  transition:0.2s ease;
+  box-shadow:0 2px 6px rgba(0,0,0,0.05);
+}
+
+.menu-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 6px 14px rgba(0,0,0,0.1);
+  background:#f9f9f9;
+}
+</style>
+
+<div class="menu-wrapper">
+  <div class="menu-container">
+
+    <h2>Find Wholesale Suppliers Near You</h2>
+    <div class="grid">
+      <a class="menu-card" href="/search/clothing">Clothing & Fashion</a>
+      <a class="menu-card" href="/search/beauty-products">Beauty Products</a>
+      <a class="menu-card" href="/search/jewelry">Jewelry</a>
+      <a class="menu-card" href="/search/footwear">Footwear</a>
+      <a class="menu-card" href="/search/produce">Produce</a>
+      <a class="menu-card" href="/search/accessories">Accessories</a>
+      <a class="menu-card" href="/search/general-wholesale">General Wholesale</a>
+    </div>
+
+    <h2>Search by County</h2>
+    <div class="grid">
+      <a class="menu-card" href="/search/orange-county">Orange County</a>
+      <a class="menu-card" href="/search/los-angeles">Los Angeles</a>
+      <a class="menu-card" href="/search/riverside">Riverside</a>
+      <a class="menu-card" href="/search/san-bernardino">San Bernardino</a>
+    </div>
+
+  </div>
+</div>
+      
+      
+      
+      
+      
+      
+      <style>
 .filters {
   display:flex;
   flex-wrap:wrap;
@@ -287,6 +356,9 @@
 }
 </style>
 
+      
+      
+    <h2>Search by Supplier</h2>
 <div class="filters">
   <input type="text" id="search" placeholder="Search suppliers...">
 
@@ -381,9 +453,17 @@ function render(data){
     document.getElementById("listings").innerHTML = html;
 }
 </script>
+      
+      
+      
+    </div></center>
+<br><br><br>
+  
   </div>
   
   <center>
+    
+    <div class="wowbox">
 <section class="cover-section">
   
 
@@ -421,7 +501,7 @@ function render(data){
       <a href="/commercial-sign-near-me" class="cover-button">Browse Wholesale</a>
     </div>
   </div>
-  
+  </div>
   </section>
   </center>
   
@@ -431,7 +511,7 @@ function render(data){
   <div class="footer-container">
     <div class="footer-brand">
       <h2 class="logo">Got-Wholesale.com</h2>
-      <p>Sales/Marketing Magazine & Training</p>
+      <p>Quality Wholesale Suppliers Near You</p>
     </div>
 
     <div class="footer-links">
@@ -440,21 +520,23 @@ function render(data){
         
         <li><a href="/search/clothing">Clothing, Apparel & Fashion</a></li>
         <li><a href="/search/jewelry">Jewelry</a></li>
+        <li><a href="/search/beauty-products">Beauty</a></li>
+        <li><a href="/search/footwear">Footwear</a></li>
         <li><a href="/search/accessories">Accessories</a></li>
         <li><a href="/search/produce">Produce</a></li>
         <li><a href="/search/general">General Wholesale</a></li>
-        <li><a href="/search/vape">Vape</a></li>
+        <li><a href="/search/">Automotive</a></li>
+        <li><a href="/search/">Manufacturing</a></li>
+        <li><a href="/search/">Other</a></li>
         <br>
         <li><a href="/news">News</a></li>
         <li><a href="/training">Training</a></li>
         <li><a href="/resources">Resources</a></li>
-        <li><a href="/survey">Surveys & Polls</a></li>
-        <li><a href="/contact">Contact</a></li>
       </ul>
     </div>
 
     <div class="footer-company">
-      <h4>Training</h4><br>
+      <h4>Education & Training</h4><br>
       <ul>
         <li><a href="/online-class-ecommerce-design-digital-marketing-game-creation">Online Training</a></li>
         <li><a href="/in-person-class-ecommerce-design-digital-marketing-game-creation">In Person Training</a></li>
